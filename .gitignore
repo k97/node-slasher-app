@@ -1,0 +1,21 @@
+# Build output
+dist
+.next
+
+# Dependencies
+node_modules
+
+# Logs
+*.log
+
+# Coverage
+.nyc_output
+coverage
+
+# Test output
+test/**/out
+.DS_Store
+
+
+# Editor
+.vscode

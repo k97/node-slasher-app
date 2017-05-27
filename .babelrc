@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "css-modules-transform", {
+        "extensions": [".css", ".scss"],
+        "extractCss": "./static/css/bundle.css",
+        "preprocessCss": "./pre-processor.js"
+      }
+    ]
+  ]
+}
