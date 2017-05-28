@@ -1,50 +1,55 @@
-const { createServer } = require('http')
-const { parse } = require('url')
-const next = require('next')
-const { join } = require('path')
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const express = require('express');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const path = require('path');
 
-app.prepare()
-.then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true)
-    const rootStaticFiles = [
-      '/robots.txt',
-      '/sitemap.xml',
-      '/favicon.ico'
-    ]
-    if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
-      const path = join(__dirname, 'static', parsedUrl.pathname)
-      app.serveStatic(req, res, path)
-    } else {
-      handle(req, res, parsedUrl)
-    }
-  })
-  .listen(3000, (err) => {
-    if (err) throw err
-    console.log('> Ready on http://localhost:3000')
-  })
-})
+const dev = process.env.NODE_ENV !== 'production';
+const next = require('next');
+const pathMatch = require('path-match');
+const app = next({ dev });
+const handle = app.getRequestHandler();
+const { parse } = require('url');
 
+// const apiRoutes = require('./server/routes/apiRoutes.js');
 
+app.prepare().then(() => {
+  const server = express();
 
-//Next Routes
-// const { createServer } = require('http')
-// const next = require('next')
-// const routes = require('./routes')
+  server.use(bodyParser.json());
+  server.use(session({
+    secret: 'super-secret-key',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 60000 }
+  }));
 
-// const dev = process.env.NODE_ENV !== 'production'
-// const app = next({ dev })
-// const handler = routes.getRequestHandler(app)
+  // server.use('/api', apiRoutes);
 
-// app.prepare()
-// .then(() => {
-//   createServer(handler)
-//   .listen(3000, (err) => {
-//     if (err) throw err
-//     console.log('> Ready on http://localhost:3000')
-//   })
-// })
+  // Server-side
+  const route = pathMatch();
+
+  server.get('/info', (req, res) => {
+    return app.render(req, res, '/info', req.query);
+  });
+
+  server.get('/artist/:id', (req, res) => {
+    const params = route('/artist/:id')(parse(req.url).pathname);
+    return app.render(req, res, '/artist', params);
+  });
+
+  server.get('/album/:id', (req, res) => {
+    const params = route('/album/:id')(parse(req.url).pathname);
+    return app.render(req, res, '/album', params);
+  });
+
+  server.get('*', (req, res) => {
+    return handle(req, res);
+  });
+
+  /* eslint-disable no-console */
+  server.listen(9797, (err) => {
+    if (err) throw err;
+    console.log('Server ready on http://localhost:9797');
+  });
+});

@@ -12,7 +12,7 @@ export default class Counter extends React.Component {
     return (
       <div>
         <p>Count is: {count}</p>
-        <button onClick={() => this.add()}>Add</button>
+        <button onClick={() => this.add()} className="f6 link dim br1 ba ph3 pv2 mb2 dib dark-blue">Add</button>
       </div>
     )
   }

@@ -1,0 +1,52 @@
+
+* { box-sizing: border-box}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background-color: #fff;
+}
+
+header {
+  z-index: 9999;
+}
+
+.bg-blue-hero {
+  background: #CCE1F1;
+}
+.sec-clr {
+  color: #23CC81;
+}
+.main-content {
+  position: relative;
+  z-index: 99;
+}
+
+.body-content {
+  margin-top:70px;
+}
+
+@media(max-width: 959px) {
+  .hero--txt {
+    text-align: center;
+  }
+}
+
+.hero--txt {
+  position: relative;
+  z-index: 999;
+
+}
+
+.hero--img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 800px;
+  height: 800px;
+  z-index: 998;
+  background: url(../img/hero-img.png) no-repeat 0% 100%;
+  background-size: 814px;
+}
+
