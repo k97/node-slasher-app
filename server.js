@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -11,12 +10,28 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const { parse } = require('url');
 
-// const apiRoutes = require('./server/routes/apiRoutes.js');
+const mongoose = require('mongoose');
+const promisify = require('es6-promisify');
+
+// const apiRoutes = require('./handlers/router.js');
+
+// import environmental variables from our variables.env file
+require('dotenv').config({ path: 'variables.env' });
+
+// Connect to our Database and handle an bad connections
+mongoose.connect(process.env.DATABASE);
+mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.connection.on('error', (err) => {
+  console.error(`🚫 🚫 🚫 🚫 → ${err.message}`);
+});
+console.log(`✅  Mongo DB Connected`);
+
 
 app.prepare().then(() => {
   const server = express();
 
   server.use(bodyParser.json());
+
   server.use(session({
     secret: 'super-secret-key',
     resave: false,
@@ -29,27 +44,20 @@ app.prepare().then(() => {
   // Server-side
   const route = pathMatch();
 
-  server.get('/info', (req, res) => {
-    return app.render(req, res, '/info', req.query);
-  });
-
-  server.get('/artist/:id', (req, res) => {
-    const params = route('/artist/:id')(parse(req.url).pathname);
-    return app.render(req, res, '/artist', params);
-  });
-
-  server.get('/album/:id', (req, res) => {
-    const params = route('/album/:id')(parse(req.url).pathname);
-    return app.render(req, res, '/album', params);
+  server.get('/journal/:jid', (req, res) => {
+    const params = route('/journal/:jid')(parse(req.url).pathname);
+    return app.render(req, res, '/journal', params);
   });
 
   server.get('*', (req, res) => {
     return handle(req, res);
   });
 
+
   /* eslint-disable no-console */
-  server.listen(9797, (err) => {
+  server.set('port', process.env.PORT || 7777);
+  const container = server.listen(server.get('port'), (err) => {
     if (err) throw err;
-    console.log('Server ready on http://localhost:9797');
+    console.log(`🌍   Express running → PORT ${container.address().port}`);
   });
 });

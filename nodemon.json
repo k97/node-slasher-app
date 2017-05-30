@@ -6,7 +6,8 @@
     "./.vscode/*",
     "./pages/*",
     "./components/*",
-    "./types/*"
+    "./types/*",
+    "./next"
     ],
   "watch": [
     "./server.js",

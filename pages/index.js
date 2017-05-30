@@ -1,5 +1,7 @@
-import React from "react";
-import ss from '../components/Home/index.scss';
+import React from 'react';
+import Link from 'next/link';
+
+import Layout from '../components/Layout/index';
 
 class HomePage extends React.Component {
 
@@ -19,19 +21,21 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <section className="hero cover bg-left bg-center-l">
-        <div className="cf bg-blue-hero">
+      <Layout title={ 'Karthikeyan Rajendran' }>
+        <section className="hero cover bg-left bg-center-l">
+          <div className="cf bg-blue-hero">
 
-          <div className="fl w-50">
-            {this.heroText()}
+            <div className="fl w-50">
+              {this.heroText()}
+            </div>
+
+            <div className="fl w-50">
+              <div className="hero--img" />
+            </div>
+
           </div>
-
-          <div className="fl w-50">
-            <div className="hero--img" />
-          </div>
-
-        </div>
-      </section>
+        </section>
+      </Layout>
     );
   }
 
