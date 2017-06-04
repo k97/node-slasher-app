@@ -4,10 +4,9 @@ import axios from "axios";
 
 import Layout from "../components/Layout/index";
 import JournalFilter from "../components/Journal/Filter";
-import Journal from "../components/Journal/JournalItem";
-import JournalPost from "../components/Journal/Post";
+import JournalCard from "../components/Journal/Card";
 
-class JournalList extends React.Component {
+class JList extends React.Component {
 
   static getInitialProps({ query: { jid } }) {
     return { jid };
@@ -19,45 +18,51 @@ class JournalList extends React.Component {
       jid: null,
       journalList: [],
       limit: 6,
-      total: 0,
-      offset: 0
+      count: 0,
+      page: 1
     };
     this.fetchJournals = this.fetchJournals.bind(this);
-    this.getJournalListData = this.getJournalListData.bind(this);
-    this.loadJournal = this.loadJournal.bind(this);
+    this.loadMoreBtn = this.loadMoreBtn.bind(this);
   }
 
   componentDidMount() {
     this.fetchJournals();
   }
 
-  fetchJournals() {
-    const jid = this.props.jid;
-    if (jid) {
-      console.log(jid);
-      this.loadJournal();
-      //
-    } else {
-      this.getJournalListData();
-    }
+  handlePagination(currentPage) {
+    // const newCount = this.state.count + 1;
+    this.setState({
+      page : currentPage + 1
+    });
+    this.fetchJournals();
   }
 
-  getJournalListData() {
+
+  loadMoreBtn() {
+    return (
+      <div className="flex items-center justify-center pa4">
+        <a onClick={this.handlePagination.bind(this, this.state.page)} className="f5 no-underline black-80 bg-animate hover-bg-black hover-white inline-flex items-center ph4 pv2 shadow-hover ba br2">
+          <span className="pr1">Load more Page: {this.state.page} - Total : {this.state.count}</span>
+        </a>
+      </div>
+    );
+  }
+
+  fetchJournals() {
     this.setState(() => {
       axios
-        .get("http://localhost:9697/journals", {
+        .get("/api/journals", {
           params: {
             limit: this.state.limit,
-            offset: this.state.offset
+            page: this.state.page
           }
         })
         .then(response => {
           const jObj = response.data;
           this.setState({
             journalList: jObj.journals,
-            limit: jObj.limit,
-            offset: jObj.offset,
-            total: jObj.total_count,
+            pages: jObj.pages,
+            count: jObj.count,
             loading: false
           });
         })
@@ -72,20 +77,22 @@ class JournalList extends React.Component {
     return (
       <Layout title={"Journal - Karthik"}>
         <div className="body-content">
-          <section className="w-100 ph2 ph3-m ph4-l">
-            <div className="cf pa2">
+          <JournalFilter />
+          <section className="w-100 ph0-ns ph3-m ph4-l">
+            <div className="cf pa0-ns pa2">
               {Object.keys(journalList).map(key => (
-                <Journal key={key} details={journalList[key]} />
+                <JournalCard details={journalList[key]} key={key} />
               ))}
             </div>
           </section>
+          { this.loadMoreBtn() }
         </div>
       </Layout>
     );
   }
 }
 
-export default JournalList;
+export default JList;
 
 //     <JournalFilter />
 // <JournalList />

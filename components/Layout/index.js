@@ -12,9 +12,10 @@ export default ({ children, title = 'K97 - Karthik webspace' }) => (
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel="stylesheet" href="/static/css/tachyons.css" />
       <link rel="stylesheet" href="/static/css/nprogress.css" />
+      <link rel="stylesheet" href="/static/css/simplemde.css" />
       <link rel="stylesheet" href="/static/css/main.css" />
     </Head>
-
+    <Header />
     <div className="main-content">
       { children }
     </div>

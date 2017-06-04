@@ -2,11 +2,18 @@
 * { box-sizing: border-box}
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   color: #111;
   background-color: #fff;
+  overflow-y:scroll;
 }
+body, body input, body textarea, body button, body select {
+  font-family: 'Avenir Next',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/*.ft-serif {
+  font-family: 'Avenir Next'
+}*/
 
 header {
   z-index: 9999;
@@ -26,6 +33,12 @@ header {
 
 .body-content {
   margin-top:70px;
+}
+@media(max-width: 959px) {
+
+.body-content {
+  margin-top:100px;
+}
 }
 
 @media(max-width: 959px) {
@@ -58,8 +71,19 @@ header {
 
 .journal--header, .journal--subtitle {
   position: relative;
-  top: 20px;
+  top: 8px;
 }
 .link {
   cursor: pointer;
+}
+
+
+
+select {
+    height: 40px;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
 }
