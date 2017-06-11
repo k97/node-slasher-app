@@ -6,8 +6,8 @@ class Header extends React.Component {
 
 render() {
   return (
-    <header className="fixed w-100 top-0 bg-white">
-      <nav className="db dt-l w-100 border-box pa3 ph5-l ttu tracked bb b--black-10 ">
+    <header className="fixed w-100 top-0 ">
+      <nav className="db dt-l w-100 border-box pa3 ph5-l ttu tracked bg-white bb b--black-10">
         <Link href='/'>
           <a className="db dtc-l v-mid mid-gray link w-100 w-25-l tc tl-l mb2 mb0-l" title="Home">
             <img src="/static/img/k97-sticks-bw.png" className="dib w2 h2" alt="K97 Logo" />
@@ -16,16 +16,16 @@ render() {
 
         <div className="db dtc-l v-mid w-100 w-75-l tc tr-l f6 fw6">
           <Link href='/'>
-            <a className="hover-blue link black-70 mr2 mr3-m mr4-l dib" title="Home">Home</a>
+            <a className="hover-blue link black-70 mr2 mr3-m mr5-l dib" title="Home">Home</a>
           </Link>
-          <Link href='/info'>
-            <a className="hover-blue link black-70 mr2 mr3-m mr4-l dib" title="Information">Info</a>
+          <Link href='/about'>
+            <a className="hover-blue link black-70 mr2 mr3-m mr5-l dib" title="Information">About</a>
           </Link>
-          <Link href='/jlist' as="/journal">
-            <a className="hover-blue link black-70 mr2 mr3-m mr4-l dib" title="Journal">Journal</a>
+          <Link href='/journalList' as="/journal">
+            <a className="hover-blue link black-70 mr2 mr3-m mr5-l dib" title="Journal">Journal</a>
           </Link>
-          <Link href='/labs'>
-            <a className="hover-blue link black-70 mr2 mr3-m mr4-l dib" title="References">Labs</a>
+          <Link href='/work'>
+            <a className="hover-blue link black-70 mr2 mr3-m mr5-l dib" title="References">Work</a>
           </Link>
         </div>
 

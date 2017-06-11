@@ -4,7 +4,7 @@ const router = express.Router();
 const journalController = require('../controllers/journalController');
 
 
-router.get('/journals', journalController.getJournals);
+router.post('/journals', journalController.getJournals);
 router.get('/journals/:id', journalController.getJournalDetails);
 router.post('/journal/create', journalController.createJournal);
 

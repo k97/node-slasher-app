@@ -34,7 +34,6 @@ class AddJournal extends React.Component {
     if(!this.state.isPostReady) return;
     axios.post('/api/journal/create', newPost)
       .then(response => {
-        debugger
         this.handleResponse(response);
       }).catch(error => {
         console.error(error);
@@ -43,9 +42,8 @@ class AddJournal extends React.Component {
   }
 
 
-  handleResponse(val){
-    debugger
-    if(val.status == 200){
+  handleResponse(val) {
+    if(val.status == 200) {
       const createdVal = val.data;
       this.setState({ newPost: createdVal, showSuccessAlert: true, showErrorAlert: false });
     } else {
@@ -77,7 +75,7 @@ class AddJournal extends React.Component {
     return (
       <Layout title={"New Journal"}>
         <div className="body-content">
-          <div className="ph4 bt bb b--black-10 f5 bg-blue-hero">
+          <div className="ph4 bt bb b--black-10 f5 bg-white">
             <a className={`link dib ph4 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showAdd ? "bb fw5" : ""}`}
               onClick={this.toggleView.bind(this, "add")}>
               Add

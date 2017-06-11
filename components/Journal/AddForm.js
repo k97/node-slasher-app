@@ -25,7 +25,6 @@ class AddForm extends React.Component {
   }
 
   savePost(event) {
-    debugger
     this.props.setPostReady(false);
     if(event) {
      event.preventDefault();

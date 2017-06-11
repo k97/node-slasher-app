@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const path = require('path');
 
-require('./models/Journal');
-
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const promisify = require('es6-promisify');
@@ -18,6 +16,9 @@ const { parse } = require('url');
 
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
+
+require('./models/Journal');
+require('./models/Project');
 
 // Connect to our Database and handle an bad connections
 mongoose.connect(process.env.DATABASE);
@@ -54,22 +55,24 @@ app.prepare().then(() => {
   const route = pathMatch();
 
   server.get('/journal', (req, res) => {
-    return app.render(req, res, '/jlist', req.query);
-  });
-
-  server.get('/info', (req, res) => {
-    return app.render(req, res, '/info', req.query);
+    return app.render(req, res, '/journalList', req.query);
   });
 
   server.get('/journal/:id', (req, res) => {
     const params = route('/journal/:id')(parse(req.url).pathname);
     console.log(params);
-    return app.render(req, res, '/jdetail', params);
+    return app.render(req, res, '/journalDetail', params);
   });
 
   server.get('/add/journal', (req, res) => {
     const params = route('/add/journal')(parse(req.url).pathname);
-    return app.render(req, res, '/jadd', params);
+    return app.render(req, res, '/journalAdd', params);
+  });
+
+  server.get('/work/:id', (req, res) => {
+    const params = route('/work/:id')(parse(req.url).pathname);
+    console.log(params);
+    return app.render(req, res, '/workDetail', params);
   });
 
   server.get('*', (req, res) => {

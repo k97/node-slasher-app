@@ -2,24 +2,9 @@ const mongoose = require("mongoose");
 const Journal = mongoose.model("Journal");
 
 /**
- * Method to create Journal posts
- */
-exports.createJournal = async (req, res) => {
-  const payload = new Journal(req.body);
-  try {
-    const journalRes = await payload.save();
-    res.json(journalRes);
-  } catch (error) {
-    console.log(error);
-    res.status(400).json(error).end();
-  }
-  return res;
-};
-
-/**
  * Method to fetch the journals from the DB
  */
-exports.getJournals = async (req, res) => {
+exports.getProjects = async (req, res) => {
   const page = req.body.page || 1;
   const limit = req.body.limit || 6;
   const skip = page * limit - limit;
@@ -45,7 +30,7 @@ exports.getJournals = async (req, res) => {
 /**
  * Method to retrieve a store from the database
  */
-exports.getJournalDetails = async (req, res, next) => {
+exports.getProjectDetails = async (req, res, next) => {
   console.log(req.params);
   try {
     const response = await Journal.findOne({ customUrlSlug: req.params.id });

@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import Layout from '../components/Layout/index';
+import Tacho from '../components/Home/Tacho';
+import indexCSS from 'styles/home.scss'
 
 class HomePage extends React.Component {
 
@@ -22,19 +24,20 @@ class HomePage extends React.Component {
   render() {
     return (
       <Layout title={ 'Karthikeyan Rajendran' }>
-        <section className="hero cover bg-left bg-center-l">
-          <div className="cf bg-blue-hero">
+        <style dangerouslySetInnerHTML={{ __html: indexCSS }} />
+        <div className="hero cover bg-left bg-center-l">
+          <section className="cf bg-blue-hero">
 
-            <div className="fl w-50">
+            <div className="fl w-100 w-50-ns">
               {this.heroText()}
             </div>
 
-            <div className="fl w-50">
-              <div className="hero--img" />
+            <div className="fl w-100 w-50-ns seiso-tach-container">
+              <Tacho />
             </div>
 
-          </div>
-        </section>
+          </section>
+        </div>
       </Layout>
     );
   }

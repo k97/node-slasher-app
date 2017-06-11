@@ -1,0 +1,43 @@
+$color: darken(#CCE1F2, 10%);
+.hero {
+  z-index: -1;
+}
+.mid-gray {
+
+}
+.rippler {
+  display: table;
+  background-color: $color;
+  border: 3px solid darken($color, 1%);
+  width: 45vh;
+  height: 45vh;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 0 0 0 rgba($color, 0.3),
+                0 0 0 9em rgba($color, 0.3),
+                0 0 0 18em rgba($color, 0.3),
+                0 0 0 27em rgba($color, 0.3);
+}
+
+.rippler:hover {
+  animation: ripple 0.8s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color, 0.3),
+                0 0 0 9em rgba($color, 0.3),
+                0 0 0 18em rgba($color, 0.3),
+                0 0 0 27em rgba($color, 0.2),
+                0 0 0 36em rgba($color, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 9em rgba($color, 0.3),
+                0 0 0 18em rgba($color, 0.3),
+                0 0 0 27em rgba($color, 0.2),
+                0 0 0 36em rgba($color, 0.1),
+                0 0 0 45em rgba($color, 0);
+  }
+}

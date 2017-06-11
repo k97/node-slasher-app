@@ -46,7 +46,7 @@ class JDetail extends React.Component {
   render() {
     const { journalList, total } = this.state;
     return (
-      <Layout title={'Journal - Karthik'}>
+      <Layout title={`${this.state.journalDetail.title || 'Journal'} - Karthik`}>
         <div className='body-content'>
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
