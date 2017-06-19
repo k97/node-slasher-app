@@ -16,15 +16,16 @@ export const labLinks = [
   {
     "url": "viewport-resizer",
     "title": "Viewport Resizer",
-    "blurb": "30 day JS code challenge",
-    "caption": "Courtesy: <strong>Wes Bos</strong>",
-    "poster": "http://localhost:9797/static/img/placeholders/js1.jpg"
+    "blurb": "A viewport resizer tool to test webpages on different resolutions",
+    "caption": "",
+    "poster": "http://localhost:9797/static/img/placeholders/viewport.jpg"
   },
   {
-    "url": "less-grid",
-    "title": "Less Grid",
+    "url": "project-connect",
+    "title": "connect",
     "blurb": "30 day JS code challenge",
-    "caption": "Courtesy: <strong>Wes Bos</strong>",
+    "caption": "",
     "poster": "http://localhost:9797/static/img/placeholders/js1.jpg"
-  }
+  },
+
 ]

@@ -9,7 +9,7 @@ const journalSchema = new mongoose.Schema({
 	},
 	customUrlSlug: {
 		type: String,
-		time: true,
+		trime: true,
     required: "Please enter a custom url to display"
 	},
 	tags: [String],

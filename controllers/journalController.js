@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Journal = mongoose.model("Journal");
+const mongoose = require('mongoose');
+const Journal = mongoose.model('Journal');
 
 /**
  * Method to create Journal posts

@@ -60,8 +60,8 @@ class JournalFilter extends React.Component {
     return (
       <div>
         <section className="pv4 ph5 black-90 bg--journal">
-          <div className="b f3 f2-ns black-70 lh-solid journal--header">Recordings</div>
-          <p className="f6 db ttu lh-solid journal--subtitle">about design and TECH</p>
+          <div className="b f3 f2-ns black-90 lh-solid journal--header">Recordings</div>
+          <p className="f6 fw5 db ttu lh-solid journal--subtitle yellow-txt ">about design and TECH</p>
         </section>
 
           <div className="ph4 bt bb b--black-10 f5 bg-white">

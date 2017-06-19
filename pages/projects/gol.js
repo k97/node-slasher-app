@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import Layout from '../components/Layout/index';
+import Layout from '../../components/Layout/index';
 
 class LaDetail extends React.Component {
 

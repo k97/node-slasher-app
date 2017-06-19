@@ -8,7 +8,7 @@ class WorkCard extends React.Component {
   render() {
     const cModel = this.props.details;
     return (
-      <section className="fl w-100 w-50-m w-25-l pa3 ">
+      <section className="fl w-100 w-50-m w-25-l pa3">
               <Link
           href={"/workDetail?id=" + cModel.url}
           as={"/work/" + cModel.url}
@@ -21,7 +21,7 @@ class WorkCard extends React.Component {
           <div className="pa3 ma0">
             <p className="db black-70 ma0 pa0" dangerouslySetInnerHTML={{__html: cModel.blurb}}></p>
             { cModel.caption
-              ? (<small className="db gray pa0" dangerouslySetInnerHTML={{__html: cModel.caption}}></small>)
+              ? (<small className="db gray pa0 mt2" dangerouslySetInnerHTML={{__html: cModel.caption}}></small>)
               : ''
             }
           </div>

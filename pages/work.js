@@ -8,6 +8,7 @@ import { labLinks } from "../handlers/labLinks";
 
 class HomePage extends React.Component {
 
+
   render() {
     return (
       <Layout title={"Projects - k97"}>
@@ -17,12 +18,10 @@ class HomePage extends React.Component {
         </div>
         <div className="lab-cards ph4 cf ">
           {
-            Object.keys(labLinks).map(key => (
-              <WorkCard details={labLinks[key]} key={key} />
-            )
+            Object.keys(labLinks).map(
+              key => ( <WorkCard details={labLinks[key]} key={key} /> )
             )
           }
-
         </div>
 
       </Layout>

@@ -16,9 +16,9 @@ const { parse } = require('url');
 
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
-
 require('./models/Journal');
 require('./models/Project');
+
 
 // Connect to our Database and handle an bad connections
 mongoose.connect(process.env.DATABASE);
@@ -50,29 +50,40 @@ app.prepare().then(() => {
 
   server.use('/api', apiRouter);
 
-
   // Server-side
   const route = pathMatch();
 
+
   server.get('/journal', (req, res) => {
-    return app.render(req, res, '/journalList', req.query);
+    return app.render(req, res, '/journal', req.query);
   });
+
 
   server.get('/journal/:id', (req, res) => {
     const params = route('/journal/:id')(parse(req.url).pathname);
-    console.log(params);
     return app.render(req, res, '/journalDetail', params);
   });
+
+
+  // server.use('/work/', workPageRouter);
+
+  server.get('/work/game-of-life', (req, res) => {
+    return app.render(req, res, '/projects/gol.js', req.query);
+  });
+
+  server.get('/work/30-days', (req, res) => {
+    return app.render(req, res, '/projects/gol.js', req.query);
+  });
+
 
   server.get('/add/journal', (req, res) => {
     const params = route('/add/journal')(parse(req.url).pathname);
     return app.render(req, res, '/journalAdd', params);
   });
 
-  server.get('/work/:id', (req, res) => {
-    const params = route('/work/:id')(parse(req.url).pathname);
-    console.log(params);
-    return app.render(req, res, '/workDetail', params);
+  server.get('/add/work', (req, res) => {
+    const params = route('/add/work')(parse(req.url).pathname);
+    return app.render(req, res, '/workAdd', params);
   });
 
   server.get('*', (req, res) => {
