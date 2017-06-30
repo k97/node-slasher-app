@@ -18,7 +18,8 @@ const { parse } = require('url');
 require('dotenv').config({ path: 'variables.env' });
 require('./models/Journal');
 require('./models/Project');
-
+const apiRouter = require('./handlers/apiRouter.js');
+const { workRoutes } = require('./handlers/helpers');
 
 // Connect to our Database and handle an bad connections
 mongoose.connect(process.env.DATABASE);
@@ -32,7 +33,7 @@ mongoose.connection.on("connected", () => {
   console.log(`✅  Mongo DB Connected`);
 });
 
-const apiRouter = require('./handlers/apiRouter.js');
+
 app.prepare().then(() => {
   const server = express();
 
@@ -60,21 +61,16 @@ app.prepare().then(() => {
 
 
   server.get('/journal/:id', (req, res) => {
+    console.log(req.params.id);
     const params = route('/journal/:id')(parse(req.url).pathname);
     return app.render(req, res, '/journalDetail', params);
   });
 
-
-  // server.use('/work/', workPageRouter);
-
-  server.get('/work/game-of-life', (req, res) => {
-    return app.render(req, res, '/projects/gol.js', req.query);
+  server.get('/work/:id', (req, res) => {
+    const projectLink = workRoutes(req.params.id);
+    const params = route('/work/:id')(parse(req.url).pathname);
+    return app.render(req, res, `/work/${projectLink}`, params);
   });
-
-  server.get('/work/30-days', (req, res) => {
-    return app.render(req, res, '/projects/gol.js', req.query);
-  });
-
 
   server.get('/add/journal', (req, res) => {
     const params = route('/add/journal')(parse(req.url).pathname);

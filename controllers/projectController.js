@@ -16,6 +16,19 @@ exports.createProject = async (req, res) => {
   return res;
 };
 
+/**
+ * Method to retrieve a project store from the database
+ */
+exports.getProjectDetails = async (req, res, next) => {
+  console.log(req.params);
+  try {
+    const response = await Project.findOne({ customUrlSlug: req.params.id });
+    res.json(response);
+  } catch (error) {
+    res.status(400).json(error).end();
+  }
+};
+
 
 /**
  * Method to fetch the projects from the DB
@@ -28,18 +41,4 @@ exports.getProjects = async (req, res) => {
     res.status(400).json(error).end();
   }
   return res;
-};
-
-
-/**
- * Method to retrieve a project store from the database
- */
-exports.getProjectDetails = async (req, res, next) => {
-  console.log(req.params);
-  try {
-    const response = await Project.findOne({ customUrlSlug: req.params.id });
-    res.json(response);
-  } catch (error) {
-    res.status(400).json(error).end();
-  }
 };

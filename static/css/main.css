@@ -1,4 +1,8 @@
+/*
+Pulsating CSS
+https://jsbin.com/hoxokeheto/1/edit?output
 
+*/
 * { box-sizing: border-box}
 
 body {
@@ -6,15 +10,21 @@ body {
   color: #252527;
   background: #F0F3F6;
   overflow-y:scroll;
-      -webkit-font-smoothing: antialiased;
-}
-body, body input, body textarea, body button, body select {
-  font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Lato', sans-serif;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+body, body input, body textarea, body button, body select,.ft-serif  {
+  font-family: 'Franklin Gothic Book', 'Chivo', -apple-system, BlinkMacSystemFont, 'Lato', sans-serif;
 }
 
-.ft-serif {
-  font-family: 'Alegreya';
+.kheader {
+    box-shadow: 0 1px 1px #e1e1e1;
 }
+.kheader nav {
+  background: rgba(255, 255, 255, 0.96);
+}
+
 
 header {
   z-index: 9999;
@@ -307,8 +317,109 @@ Intro Section
     box-shadow: 0 -6px 0 #25283D;
   }
   .cd-secondary-nav.slide-up {
-    -webkit-transform: translateY(-80px);
-        -ms-transform: translateY(-80px);
-            transform: translateY(-80px);
+      transform: translateY(-80px);
   }
+}
+
+/*
+*/
+/*
+.ka-list-wrapper {
+}
+
+.ka-list{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: stretch;
+	width: 100%;
+	margin: auto;
+}
+.ka-list-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: stretch;
+	flex-grow: 1;
+}*/
+
+.ka-list {
+  column-count: 3;
+  column-gap: 1.0em;
+}
+
+.ka-work-list {
+  column-count: 4;
+  column-gap: 1.0em;
+}
+
+.ka-list-item, .ka-work-list-item {
+    display: block;
+    margin:0 0 1.0em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all .4s linear;
+
+  page-break-inside: avoid; /* For Firefox. */
+  -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+  break-inside: avoid; /* For standard browsers like IE. :-) */
+}
+.ka-list-item:hover, .ka-work-list-item:hover {
+    cursor: pointer;
+  box-shadow:0 12px 6px 2px #cdcdcd
+}
+
+@media (max-width: 599px) {
+    .ka-list,.ka-work-list {
+        column-count: 1;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .ka-list,.ka-work-list {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+    .ka-list,.ka-work-list {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1280px)  {
+    .ka-work-list {
+        column-count: 4;
+    }
+}
+
+.ka-work-list-item img  {
+    transition: all .4s ease-in-out;
+	filter: grayscale(90%);
+}
+.ka-work-list-item:hover img  {
+	filter: grayscale(0%);
+}
+
+
+
+.passphrase-form input,
+.passphrase-form button {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.passphrase-form button{
+  border: none;
+  cursor: pointer;
+}
+.passphrase-form button i{
+  position: relative;
+}
+
+.ka-link {
+  cursor: pointer;
+  border: solid #5F91F5;
+  border-width: 0 0 1px;
+  color: #5F91F5;
 }

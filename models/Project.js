@@ -29,7 +29,10 @@ const projectSchema = new mongoose.Schema({
 	created: {
 		type: Date,
 		default: Date.now
-	}
+	},
+  "published": {
+    type: Boolean
+  }
 });
 
 module.exports = mongoose.model('Project', projectSchema);

@@ -1,51 +1,18 @@
+// Pulsating Circles
+//-> https://jsbin.com/hoxokeheto/1/edit?output
+
+body {
+  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 $color: lighten(#a1c4fd, 15%);
+
 .hero {
-  // position: fixed;
   width: 100%;
-  // height: 300px;
   top: 0;
   z-index: -1;
-}
-.mid-gray {
-
-}
-
-.rippler {
-  display: table;
-  background-color: $color;
-  color: lighten(#566FA5, 10%);
-  width: 45vh;
-  height: 45vh;
-  line-height: 200px;
-  border-radius: 50%;
-  vertical-align: middle;
-  text-align: center;
-  margin: 0 auto;
-  box-shadow: 0 0 0 0 rgba($color, 0.3),
-                0 0 0 9em rgba($color, 0.3),
-                0 0 0 18em rgba($color, 0.3),
-                0 0 0 27em rgba($color, 0.3);
-}
-
-.rippler:hover {
-  animation: ripple 0.8s linear infinite;
-}
-
-@keyframes ripple {
-  0% {
-    box-shadow: 0 0 0 0 rgba($color, 0.3),
-                0 0 0 9em rgba($color, 0.3),
-                0 0 0 18em rgba($color, 0.3),
-                0 0 0 27em rgba($color, 0.2),
-                0 0 0 36em rgba($color, 0.1);
-  }
-  100% {
-    box-shadow: 0 0 0 9em rgba($color, 0.3),
-                0 0 0 18em rgba($color, 0.3),
-                0 0 0 27em rgba($color, 0.2),
-                0 0 0 36em rgba($color, 0.1),
-                0 0 0 45em rgba($color, 0);
-  }
 }
 
 
@@ -53,8 +20,8 @@ $color: lighten(#a1c4fd, 15%);
   position: fixed;
   top: inherit;
   bottom: 0;
+  box-shadow: 0px -12px 25px 0px rgba(0,0,0,0.09);
 }
-
 
 .klogo {
   display: none;
@@ -71,4 +38,161 @@ $color: lighten(#a1c4fd, 15%);
   display: none;
 }
 
+.kmain {
+  background-image: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 40px;
+}
 
+$brcolor: #ccc;
+
+.hero-img {
+  display: table;
+  position: absolute;
+  top: 20%;
+  right: 22%;
+  width: 20rem;
+  height: 20rem;
+  padding: 3.25rem;
+  border: 1px solid lighten($brcolor, 7%);
+  border-radius: 50%;
+
+  .hero-content {
+    width: 20rem;
+    height: 20rem;
+    padding: 3.25rem;
+    border: 1px solid lighten($brcolor, 2%);
+    border-radius: 50%;
+
+    .hero-img-wrapper {
+      display: block;
+      min-width: 13rem;
+      position: relative;
+      z-index: 2;
+      min-height: 13rem;
+      border-radius: 50%;
+      padding: 4rem;
+      text-align: center;
+      background: #fff;
+      border-radius: lighten($brcolor, 1%);
+      box-shadow: 0 0 50px -1px lighten($brcolor, 1%);
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      transform-origin: 50% 12.5em;
+      transition: all .4s linear;
+      z-index: 0;
+    }
+
+    .hero-bg-circle-two {
+      top: calc(50% - 8.8em);
+      left: calc(50% - 4em);
+      background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+      transform: rotateZ(-34deg);
+    }
+    .hero-bg-circle-one {
+      top: calc(50% - 17em);
+      left: calc(50% - 8em);
+      transform: rotateZ(158deg);
+      background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    }
+
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    // padding-bottom: 100%;
+
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+
+.ka-icon-set {
+  margin: 0.5em 1.0em;
+  opacity: 0.8;
+  a {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 2.0em;
+  }
+  a:nth-child(2) {
+    margin: 0 0.9em;
+  }
+  .twitter {
+    &:hover {
+      color: #2575fc;
+    }
+  }
+  .github {
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+  .linkedin {
+    &:hover {
+    color: #0077B5;
+    }
+  }
+}
+
+.ka-hero-link {
+  display: inline-block;
+  width: 90%;
+  background: #fff;
+  padding: 1.1em 3.0em 1.0em 2.0em;
+  margin: 0.4em 0 0.6em -2px;
+
+	transform: skew(20deg);
+  border-left: 5px solid #2575fc;
+  background: #fff;
+  // background:linear-gradient(to bottom, #2575fc 0%, #6a11cb 100%) no-repeat;
+  background-size: 5px 100%;
+  background-position:0 0, 100% 0;
+  box-shadow: 0 20px 40px rgba(0,0,0, 0.2); //0px -12px 25px 0px rgba(0,0,0,0.09)
+  transition: all .4s linear;
+  color: rgba(0,0,0,1);
+
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 10px 10px rgba(0,0,0,.2);
+  }
+  &:active {
+    box-shadow: 0 0px 0px rgba(0,0,0,0.0);
+  }
+
+  span {
+    display: inline-block;
+	  transform: skew(-20deg);
+    vertical-align: text-bottom;
+    font-weight: 600;
+    font-size: 0.99em;
+    width: 90%;
+    opacity: 0.6;
+    text-align: left;
+  }
+
+  i {
+    display: inline-block;
+	  transform: skew(-20deg);
+    font-size: 2.0em;
+    width: 10%;
+    text-align: right;
+    vertical-align: middle;
+  }
+}
+
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}

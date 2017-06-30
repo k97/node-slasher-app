@@ -7,7 +7,6 @@ import JournalPost from '../components/Journal/Post';
 class JDetail extends React.Component {
 
   static getInitialProps({ query: journalVal }) {
-    console.log("STATIC PROPS");
     return { journalVal };
   }
 

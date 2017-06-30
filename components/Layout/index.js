@@ -14,6 +14,7 @@ export default ({ children, title = 'K97 - Karthik webspace' }) => (
       <link rel="stylesheet" href="/static/css/nprogress.css" />
       <link rel="stylesheet" href="/static/css/simplemde.css" />
       <link rel="stylesheet" href="/static/css/main.css" />
+      <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 
       <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />

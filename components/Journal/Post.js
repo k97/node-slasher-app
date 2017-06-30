@@ -6,8 +6,8 @@ class JournalPost extends React.Component {
 
   render() {
     const journal = this.props.detail;
-    let dateText = journal.displayDate ? new Date(journal.displayDate) : new Date();
-    const dateVal = formateDate(dateText);
+    const dateVal = formateDate(journal.displayDate);
+    const summary = journal.summary ? journal.summary : '';
     const content = journal.content ? journal.content : '';
     return(
       <article className="">

@@ -24,7 +24,7 @@ exports.getJournals = async (req, res) => {
   const limit = req.body.limit || 6;
   const skip = page * limit - limit;
   const type = req.body.type || {};
-  const journalsPromise = Journal.find(type).skip(skip).limit(limit).select('title customUrlSlug blurb tags type');
+  const journalsPromise = Journal.find(type).sort('-displayDate').skip(skip).limit(limit).select('title customUrlSlug blurb tags type displayDate');
   const countPromise = Journal.find(type).count();
   try {
     const [journals, count] = await Promise.all([

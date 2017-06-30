@@ -106,13 +106,13 @@ class JList extends React.Component {
 
   render() {
     let { journalList, total } = this.state;
-    const noRecords = (<h2 className="tc ma5">No journals to display yet!</h2>);
+    const noRecords = (<div className="tc ma5 center pv6"><p className="b f4 pv6  black-80 fw6"><i className="db ion-sad-outline f2 black-70"></i>Sorry, no records to display.</p></div>);
     return (
       <Layout title={"Journal - Karthik"}>
         <div className="body-content">
           <JournalFilter filterPosts={this.filterPosts} />
           <section className="w-100 ph0-ns pa3-m pa3-l">
-            <div className="cf pa0-ns pa2">
+            <div className="ka-list pa0-ns pa2">
               {(journalList.length > 0) ? this.renderJournalCard(journalList) : noRecords}
             </div>
           </section>
