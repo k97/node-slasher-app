@@ -8,9 +8,28 @@ import Layout from "../components/Layout/index";
 class PassPhrase extends React.Component {
   constructor() {
     super();
+    this.onSubmitPass = this.onSubmitPass.bind(this);
+    this.onValidatePassPhrase = this.onValidatePassPhrase.bind(this);
   }
 
+  onValidatePassPhrase(details){
+    axios.post('/api/passphrase/login', details)
+      .then(response => {
+        debugger
+        this.setState({ loading: true });
+      }).catch(error => {
+        console.error(error);
+        this.setState({ loading: false });
+      });
+  }
 
+  onSubmitPass(event){
+    event.preventDefault();
+    let userDetails = {
+      passphrase: this.passphrase.value
+    };
+    this.onValidatePassPhrase(userDetails);
+  }
 
   onClickGoBack() {
    window.history.back()
@@ -31,9 +50,10 @@ class PassPhrase extends React.Component {
 
           <h1 className="mt0">Passphrase</h1>
           <p className="lh-copy measure">Please enter the passphrase to view this part of the website.</p>
-
-          <form className="db w-100 passphrase-form" >
-            <input className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph2 border-box" type="text" />
+          
+          <form className="db w-100 passphrase-form" ref={input=>this.loginForm=input}
+            action="/passphrase/login" method="POST">
+            <input type="text" name="passphrase" className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph2 border-box" required />
             <button className="input-reset w-100 w-auto-ns bg-blue f2 ph4" type="submit">
               <i className="ion-ios-arrow-thin-right white  v-mid"></i>
             </button>

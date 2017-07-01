@@ -5,14 +5,15 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
-  passphrase: {
+  name: {
     type: String,
-    required: 'Please supply a name',
+    lowercase: true,
+    required: true,
     trim: true
   }
 });
 
-userSchema.plugin(passportLocalMongoose, { usernameField: 'passphrase' });
+userSchema.plugin(passportLocalMongoose, { usernameField: 'name' });
 userSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model('User', userSchema);

@@ -124,7 +124,3 @@ class JList extends React.Component {
 }
 
 export default JList;
-
-//     <JournalFilter />
-// <JournalList />
-// <JournalPost></JournalPost>

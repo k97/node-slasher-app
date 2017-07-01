@@ -63,6 +63,7 @@ app.prepare().then(() => {
   server.get('/journal', (req, res) => {
     return app.render(req, res, '/journal', req.query);
   });
+  server.post('/passphrase/login', authController.login);
 
   server.get('/journal/:id', (req, res) => {
     console.log(req.params.id);
