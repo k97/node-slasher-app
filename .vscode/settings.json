@@ -1,0 +1,37 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "typescript.check.tscVersion": false,
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "Material Theme Palenight",
+  "editor.fontFamily": "'Operator Mono' ,'Roboto Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 24,
+  "editor.fontWeight": "300",
+  "workbench.iconTheme": "vs-seti",
+  "editor.wordWrap": "on",
+  "files.exclude":{
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    ".next": true,
+    "yarn.lock": true
+  },
+  "workbench.colorCustomizations": {
+    "scrollbarSlider.background": "#1C1D25",
+    "activityBar.background": "#23272E",
+    "statusBar.background": "#5D6DBE",
+    "statusBar.foreground": "#efefef",
+    "tab.activeBackground": "#5D6DBE",
+    "tab.inactiveBackground": "#23272E",
+    "tab.inactiveForeground": "#7c7c7c",
+    "tab.activeForeground": "#bcbcbc",
+    "activityBarBadge.background": "#5D6DBE",
+    "activityBarBadge.foreground": "#cdcdcd",
+    "sideBarSectionHeader.background": "#23272E",
+    "editor.background": "#23272E",
+    "sideBar.background": "#23272E"
+  }
+}
