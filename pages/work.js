@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Router from 'next/router';
 
 import Layout from "../components/Layout/index";
 import WorkCard from "../components/Work/WorkCard";
@@ -8,6 +9,16 @@ import { projectLinks } from "../handlers/projectLinks";
 
 class HomePage extends React.Component {
 
+
+  navigateToPost(pageUrl){
+    console.log(pageUrl);
+    let pKey = sessionStorage.getItem("passphrase");
+    if (pKey && pKey.length) {
+      Router.push("/work/" + pageUrl);
+    } else {
+      Router.push("/passphrase?fromRoute="+pageUrl);
+    }
+  }
 
   render() {
     return (
@@ -21,7 +32,11 @@ class HomePage extends React.Component {
           <div className="ka-work-list lab-cards">
             {
               Object.keys(projectLinks).map(
-                key => ( <WorkCard details={projectLinks[key]} key={key} /> )
+                key => (
+                  <div onClick={this.navigateToPost.bind(this,projectLinks[key].url)} key={key}>
+                    <WorkCard details={projectLinks[key]}  />
+                  </div>
+                 )
               )
             }
           </div>

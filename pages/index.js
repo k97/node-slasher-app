@@ -7,7 +7,7 @@ import indexCSS from "styles/home.scss";
 class HomePage extends React.Component {
   heroText() {
     return (
-      <section className="pv7 ph5-ns hero--txt">
+      <section className="pv7 ph5-ns hero--txt ft-head">
 
         <h1 className="b f3 f2-ns black-70 mb0 pb0 kmain">
           Karthikeyan Rajendran

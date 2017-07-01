@@ -1,9 +1,19 @@
 /*
 Pulsating CSS
 https://jsbin.com/hoxokeheto/1/edit?output
-
 */
 * { box-sizing: border-box}
+
+@font-face {
+    font-family: 'FGB';
+    src: url('../fonts/franklingothic-book-webfont.eot');
+    src: url('../fonts/franklingothic-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/franklingothic-book-webfont.woff2') format('woff2'),
+         url('../fonts/franklingothic-book-webfont.woff') format('woff'),
+         url('../fonts/franklingothic-book-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
   line-height: 1.5;
@@ -13,9 +23,15 @@ body {
     -webkit-text-size-adjust: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    }
+}
+
 body, body input, body textarea, body button, body select,.ft-serif  {
-  font-family: 'Franklin Gothic Book', 'Chivo', -apple-system, BlinkMacSystemFont, 'Lato', sans-serif;
+  font-family: 'FGB', 'Avenir Next', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+h1, h2, h3, h4, h5, h6, .ft-head {
+  font-family: -apple-system, BlinkMacSystemFont,"Roboto","Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 .kheader {
@@ -95,59 +111,6 @@ select {
 }
 
 
-/** Ripple **/
-/*html, body {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  background-color: #4e4e4e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.r-outer {
-  display: table-cell;
-  width: 40rem;
-  height: 40rem;
-  background-color: #C1D9EC;
-  border-radius: 50%;
-  vertical-align: middle;
-  position: absolute;
-}
-
-.r-middle {
-  display: table-cell;
-  width: 30rem;
-  height: 30rem;
-  background-color: #B7D1E5;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin: 0 auto;
-  position: absolute;
-}
-
-.r-inner {
-  display: table;
-  background-color: #ABC9E0;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
-  vertical-align: middle;
-  text-align: center;
-  margin: 0 auto;
-  position: absolute;
-}
-*/
-
 .rippler--text {
   display: table-cell;
   font-size: 10rem;
@@ -156,8 +119,6 @@ body {
 }
 
 /**https://codepen.io/anon/pen/rwNEKL**/
-
-
 
 /* --------------------------------
 

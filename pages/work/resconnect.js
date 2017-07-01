@@ -16,7 +16,7 @@ class ResConnect extends React.Component {
   componentDidMount() {
     this.fetchProjectDetail();
   }
-  
+
   fetchProjectDetail(){
     this.setState(() => {
       axios.get('/api/project/resconnect').then(response => {

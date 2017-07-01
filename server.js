@@ -6,6 +6,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const promisify = require('es6-promisify');
+const passport = require('passport');
 
 const dev = process.env.NODE_ENV !== 'production';
 const next = require('next');
@@ -14,11 +15,15 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const { parse } = require('url');
 
-// import environmental variables from our variables.env file
-require('dotenv').config({ path: 'variables.env' });
+require('./models/User');
 require('./models/Journal');
 require('./models/Project');
-const apiRouter = require('./handlers/apiRouter.js');
+require('./handlers/passport');
+const authController = require('./controllers/authController');
+// import environmental variables from our variables.env file
+require('dotenv').config({ path: 'variables.env' });
+
+const apiRouter = require('./handlers/apiRouter');
 const { workRoutes } = require('./handlers/helpers');
 
 // Connect to our Database and handle an bad connections
@@ -59,14 +64,13 @@ app.prepare().then(() => {
     return app.render(req, res, '/journal', req.query);
   });
 
-
   server.get('/journal/:id', (req, res) => {
     console.log(req.params.id);
     const params = route('/journal/:id')(parse(req.url).pathname);
     return app.render(req, res, '/journalDetail', params);
   });
 
-  server.get('/work/:id', (req, res) => {
+  server.get('/work/:id', authController.isLoggedIn, (req, res) => {
     const projectLink = workRoutes(req.params.id);
     const params = route('/work/:id')(parse(req.url).pathname);
     return app.render(req, res, `/work/${projectLink}`, params);

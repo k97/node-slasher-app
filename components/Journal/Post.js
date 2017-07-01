@@ -10,24 +10,26 @@ class JournalPost extends React.Component {
     const summary = journal.summary ? journal.summary : '';
     const content = journal.content ? journal.content : '';
     return(
-      <article className="">
+      <section className="">
 
-        <header className="center measure pt3 pb1 tc">
-          <h1 className=" lh-title fw8 mt0 black-90">
+        <header className="center pt3 pb2 tc">
+          <h1 className=" lh-title fw8 mt0 mb3 black-90">
             {journal.title}
           </h1>
-          <time className="f6 f6-l db fw4 mb1 black-50">{dateVal}</time>
+          <time className="f6 f6-l db fw4 black-50">{dateVal}</time>
         </header>
 
-        <div className="ph3 ph4-m ph5-l black-80 ft-serif">
-          <p className="f4 mb4 center measure lh-copy i black-50">
+        <div className="ph3 ph4-m ph5-l black-80">
+          <p className="f4 mb1 center measure lh-copy i black-50">
             {journal.summary}
           </p>
         </div>
-          <div className="fw4 measure db center f4 lh-copy black-60 ft-serif">
+        <article className="markdown-body">
+          <div className="fw4 measure db center f4 lh-copy black-60 ">
             <ReactMarkdown source={content} />
-        </div>
-      </article>
+          </div>
+        </article>
+      </section>
     );
   }
 
