@@ -109,6 +109,14 @@ class JList extends React.Component {
     const noRecords = (<div className="tc ma5 center pv6"><p className="b f4 pv6  black-80 fw6"><i className="db ion-sad-outline f2 black-70"></i>Sorry, no records to display.</p></div>);
     return (
       <Layout title={"Journal - Karthik"}>
+        <style global jsx>{`
+          .knav a:nth-child(3) {
+            border: solid #5F91F5;
+            border-width: 0 0 3px;
+            color: #5F91F5;
+          }
+          `}
+        </style>
         <div className="body-content">
           <JournalFilter filterPosts={this.filterPosts} />
           <section className="w-100 ph0-ns pa3-m pa3-l">

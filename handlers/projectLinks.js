@@ -2,7 +2,7 @@ export const projectLinks = [
   {
     "url": "resconnect",
     "title": "Resconnect",
-    "blurb": "Developing a product in a design sprint",
+    "blurb": "<strong>Case-study</strong> on developing a product in a design sprint",
     "caption": "",
     "locked": true,
     "isProjectWip": false,

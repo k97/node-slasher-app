@@ -1,13 +1,6 @@
 // Pulsating Circles
 //-> https://jsbin.com/hoxokeheto/1/edit?output
 
-body {
-  background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
-$color: lighten(#a1c4fd, 15%);
 
 .hero {
   width: 100%;
@@ -15,12 +8,11 @@ $color: lighten(#a1c4fd, 15%);
   z-index: -1;
 }
 
-
 .kheader {
   position: fixed;
   top: inherit;
   bottom: 0;
-  box-shadow: 0px -12px 25px 0px rgba(0,0,0,0.09);
+  box-shadow: 0px -12px 25px 0px rgba(0, 0, 0, 0.09);
 }
 
 .klogo {
@@ -29,9 +21,16 @@ $color: lighten(#a1c4fd, 15%);
 
 .knav {
   text-align: center;
-  a {
-    margin: 5px 5%;
-  }
+}
+.knav a {
+  margin: 0px 5%;
+}
+
+.knav a:nth-child(1) {
+  padding: 1.72em 0 1.75em;
+  border: solid #5F91F5;
+  border-width: 2px 0 0 0;
+  color: #5F91F5;
 }
 
 .kfooter {
@@ -45,8 +44,6 @@ $color: lighten(#a1c4fd, 15%);
   line-height: 40px;
 }
 
-$brcolor: #ccc;
-
 .hero-img {
   display: table;
   position: absolute;
@@ -55,94 +52,77 @@ $brcolor: #ccc;
   width: 20rem;
   height: 20rem;
   padding: 3.25rem;
-  border: 1px solid lighten($brcolor, 7%);
+  border: 1px solid #dedede;
   border-radius: 50%;
-
-  .hero-content {
-    width: 20rem;
-    height: 20rem;
-    padding: 3.25rem;
-    border: 1px solid lighten($brcolor, 2%);
-    border-radius: 50%;
-
-    .hero-img-wrapper {
-      display: block;
-      min-width: 13rem;
-      position: relative;
-      z-index: 2;
-      min-height: 13rem;
-      border-radius: 50%;
-      padding: 4rem;
-      text-align: center;
-      background: #fff;
-      border-radius: lighten($brcolor, 1%);
-      box-shadow: 0 0 50px -1px lighten($brcolor, 1%);
-    }
-
-    .hero-bg-circle {
-      position: absolute;
-      transform-origin: 50% 12.5em;
-      transition: all .4s linear;
-      z-index: 0;
-    }
-
-    .hero-bg-circle-two {
-      top: calc(50% - 8.8em);
-      left: calc(50% - 4em);
-      background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
-      transform: rotateZ(-34deg);
-    }
-    .hero-bg-circle-one {
-      top: calc(50% - 17em);
-      left: calc(50% - 8em);
-      transform: rotateZ(158deg);
-      background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    }
-
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    // padding-bottom: 100%;
-
-  }
-
-  .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-
 }
-
+.hero-img .hero-content {
+  width: 20rem;
+  height: 20rem;
+  padding: 3.25rem;
+  border: 1px solid #d1d1d1;
+  border-radius: 50%;
+}
+.hero-img .hero-content .hero-img-wrapper {
+  display: block;
+  min-width: 13rem;
+  position: relative;
+  z-index: 2;
+  min-height: 13rem;
+  border-radius: 50%;
+  padding: 4rem;
+  text-align: center;
+  background: #fff;
+  border-radius: #cfcfcf;
+  box-shadow: 0 0 50px -1px #cfcfcf;
+}
+.hero-img .hero-content .hero-bg-circle {
+  position: absolute;
+  transform-origin: 50% 12.5em;
+  transition: all .4s linear;
+  z-index: 0;
+}
+.hero-img .hero-content .hero-bg-circle-two {
+  top: calc(50% - 8.8em);
+  left: calc(50% - 4em);
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  transform: rotateZ(-34deg);
+}
+.hero-img .hero-content .hero-bg-circle-one {
+  top: calc(50% - 17em);
+  left: calc(50% - 8em);
+  transform: rotateZ(158deg);
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.hero-img:after {
+  content: "";
+  display: block;
+}
+.hero-img .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
 .ka-icon-set {
   margin: 0.5em 1.0em;
   opacity: 0.8;
-  a {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.75);
-    font-size: 2.0em;
-  }
-  a:nth-child(2) {
-    margin: 0 0.9em;
-  }
-  .twitter {
-    &:hover {
-      color: #2575fc;
-    }
-  }
-  .github {
-    &:hover {
-      color: rgba(0, 0, 0, 1);
-    }
-  }
-  .linkedin {
-    &:hover {
-    color: #0077B5;
-    }
-  }
+}
+.ka-icon-set a {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 2.0em;
+}
+.ka-icon-set a:nth-child(2) {
+  margin: 0 0.9em;
+}
+.ka-icon-set .twitter:hover {
+  color: #2575fc;
+}
+.ka-icon-set .github:hover {
+  color: black;
+}
+.ka-icon-set .linkedin:hover {
+  color: #0077B5;
 }
 
 .ka-hero-link {
@@ -151,48 +131,47 @@ $brcolor: #ccc;
   background: #fff;
   padding: 1.1em 3.0em 1.0em 2.0em;
   margin: 0.4em 0 0.6em -2px;
-
-	transform: skew(20deg);
+  transform: skew(20deg);
   border-left: 5px solid #2575fc;
   background: #fff;
-  // background:linear-gradient(to bottom, #2575fc 0%, #6a11cb 100%) no-repeat;
   background-size: 5px 100%;
-  background-position:0 0, 100% 0;
-  box-shadow: 0 20px 40px rgba(0,0,0, 0.2); //0px -12px 25px 0px rgba(0,0,0,0.09)
+  background-position: 0 0, 100% 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transition: all .4s linear;
-  color: rgba(0,0,0,1);
-
+  color: black;
   cursor: pointer;
-  &:hover {
-    box-shadow: 0 10px 10px rgba(0,0,0,.2);
-  }
-  &:active {
-    box-shadow: 0 0px 0px rgba(0,0,0,0.0);
-  }
-
-  span {
-    display: inline-block;
-	  transform: skew(-20deg);
-    vertical-align: text-bottom;
-    font-weight: 600;
-    font-size: 0.99em;
-    width: 90%;
-    opacity: 0.6;
-    text-align: left;
-  }
-
-  i {
-    display: inline-block;
-	  transform: skew(-20deg);
-    font-size: 2.0em;
-    width: 10%;
-    text-align: right;
-    vertical-align: middle;
-  }
+}
+.ka-hero-link:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.ka-hero-link:active {
+  box-shadow: 0 0px 0px transparent;
+}
+.ka-hero-link span {
+  display: inline-block;
+  transform: skew(-20deg);
+  vertical-align: text-bottom;
+  font-weight: 600;
+  font-size: 0.99em;
+  width: 90%;
+  opacity: 0.6;
+  text-align: left;
 }
 
+.ka-hero-link i {
+  display: inline-block;
+  transform: skew(-20deg);
+  font-size: 2.0em;
+  width: 10%;
+  text-align: right;
+  vertical-align: middle;
+}
 
 @keyframes spin {
-    from {transform:rotate(0deg);}
-    to {transform:rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

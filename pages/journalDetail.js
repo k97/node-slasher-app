@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import Layout from '../components/Layout/index';
 import JournalPost from '../components/Journal/Post';
-
 class JDetail extends React.Component {
 
   static getInitialProps({ query: journalVal }) {
@@ -46,6 +45,14 @@ class JDetail extends React.Component {
     const { journalList, total } = this.state;
     return (
       <Layout title={`${this.state.journalDetail.title || 'Journal'} - Karthik`}>
+        <style global jsx>{`
+          .knav a:nth-child(3) {
+            border: solid #5F91F5;
+            border-width: 0 0 3px;
+            color: #5F91F5;
+          }
+          `}
+        </style>
         <div className='body-content'>
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>

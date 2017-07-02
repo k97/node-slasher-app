@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 
 import Layout from "../components/Layout/index";
-import indexCSS from "styles/home.scss";
+// import indexCSS from "styles/home.scss";
 
 class HomePage extends React.Component {
+
   heroText() {
     return (
       <section className="pv7 ph5-ns hero--txt ft-head">
-
         <h1 className="b f3 f2-ns black-70 mb0 pb0 kmain">
           Karthikeyan Rajendran
         </h1>
@@ -41,7 +41,7 @@ class HomePage extends React.Component {
   }
 
 
-  heroComponent(){
+  heroComponent() {
     return (
       <div className="hero-img">
         <div className="hero-content">
@@ -56,7 +56,38 @@ class HomePage extends React.Component {
   render() {
     return (
       <Layout title={"Karthikeyan Rajendran"}>
-        <style dangerouslySetInnerHTML={{ __html: indexCSS }} />
+        <style global jsx>{`
+            .knav a:nth-child(1) {
+              padding: 1.72em 0 1.75em;
+              border: solid #5F91F5;
+              border-width: 2px 0 0 0;
+              color: #5F91F5;
+            }
+            .kheader {
+              position: fixed;
+              top: inherit;
+              bottom: 0;
+              box-shadow: 0px -12px 25px 0px rgba(0, 0, 0, 0.09);
+            }
+
+            .klogo {
+              display: none;
+            }
+
+            .knav {
+              text-align: center;
+            }
+
+            .knav a {
+              margin: 0px 5%;
+            }
+
+            .kfooter {
+              display: none;
+            }
+          `}
+        </style>
+
         <section className="cf ">
           <div className="fl w-100 w-100-m w-50-l w-100-ns">
             {this.heroText()}

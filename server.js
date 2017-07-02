@@ -14,15 +14,8 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const { parse } = require('url');
 
-require('./models/User');
-require('./models/Journal');
-require('./models/Project');
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
-
-const authController = require('./controllers/authController');
-const apiRouter = require('./handlers/apiRouter');
-const { workRoutes } = require('./handlers/helpers');
 
 // Connect to our Database and handle an bad connections
 mongoose.connect(process.env.DATABASE);
@@ -37,6 +30,12 @@ mongoose.connection.on("connected", () => {
   console.log(`✅  Mongo DB Connected`);
 });
 
+require('./models/Journal');
+require('./models/Project');
+
+const authController = require('./controllers/authController');
+const apiRouter = require('./handlers/apiRouter');
+const { workRoutes } = require('./handlers/helpers');
 
 
 app.prepare().then(() => {

@@ -13,7 +13,7 @@ class JournalPost extends React.Component {
       <section className="">
 
         <header className="center pt3 pb2 tc">
-          <h1 className=" lh-title fw8 mt0 mb3 black-90">
+          <h1 className="lh-title fw8 mt1 mb3 black-90">
             {journal.title}
           </h1>
           <time className="f6 f6-l db fw4 black-50">{dateVal}</time>

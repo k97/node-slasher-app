@@ -1,38 +1,69 @@
 import React from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 
 import Layout from '../../components/Layout/index';
+import ProjectTitle from '../../components/Work/ProjectTitle';
 
-class LaDetail extends React.Component {
-
-  static getInitialProps({ query: workDetail }) {
-    return { workDetail };
-  }
+class Air extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      pId: null
+      project: {}
     };
+    this.fetchProjectDetail = this.fetchProjectDetail.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchProjectDetail();
+  }
+
+  fetchProjectDetail() {
+    this.setState(() => {
+      axios.get('/api/project/resconnect').then(response => {
+        this.setState({
+          project: response.data
+        });
+      })
+        .catch(error => {
+          this.setState({ loading: false });
+        });
+    });
   }
 
 
   render() {
-    const pId = this.props.workDetail.id;
-    const { total } = this.state;
+    const content = this.state.project.content;
     return (
-      <Layout title={`${pId} || ${'Work Detail'} - Karthik`}>
+      <Layout title={`Project Connect - Karthik`}>
+        <style global jsx>{`
+          .knav a:nth-child(4) {
+            border: solid #5F91F5;
+            border-width: 0 0 3px;
+            color: #5F91F5;
+          }
+          .bg-air {
+            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+          }
+        `}
+        </style>
         <div className='body-content'>
+
+          <ProjectTitle heading="Project AIR" date="Sep, 2015" bgColor="bg-air" />
+
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
-              <h1>AIR</h1>
-              <p>The infamous AIR</p>
+              <section className="fw4 measure-wide db center f4 lh-copy black-60 ft-serif">
+                {content ? <ReactMarkdown source={content} /> : ''}
+              </section>
             </div>
           </section>
+
         </div>
       </Layout>
     );
   }
 }
 
-export default LaDetail;
+export default Air;

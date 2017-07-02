@@ -41,36 +41,26 @@ h1, h2, h3, h4, h5, h6, .ft-head {
   background: rgba(255, 255, 255, 0.96);
 }
 
-
 header {
   z-index: 9999;
 }
 
-.bg-blue-hero {
-  background: #5F91F5;
-  /* #CCE1F2 //-Actual Color
-    ##5F91F5// New TLBlue
-  background-image: linear-gradient(120deg, #c2e9fb 0%, #a1c4fd 100%);*/
-}
-.sec-clr {
-  color: #23CC81;
-}
-.yellow-txt {
-  color: #FEEE54;
-}
-.main-content {
-  position: relative;
-  z-index: 99;
+.ka-link {
+  cursor: pointer;
+  border: solid #5F91F5;
+  border-width: 0 0 1px;
+  color: #5F91F5;
 }
 
-.body-content {
-  margin-top:70px;
+.knav a{
+  padding: 1.75em 0 1.68em;
 }
+
 @media(max-width: 959px) {
 
-.body-content {
-  margin-top:100px;
-}
+  .body-content {
+    margin-top:100px;
+  }
 }
 
 @media(max-width: 959px) {
@@ -82,6 +72,18 @@ header {
 .hero--txt {
   position: relative;
   z-index: 999;
+}
+
+.yellow-txt {
+  color: #FEEE54;
+}
+.main-content {
+  position: relative;
+  z-index: 99;
+}
+
+.body-content {
+  margin-top:70px;
 }
 
 
@@ -378,9 +380,164 @@ Intro Section
   position: relative;
 }
 
-.ka-link {
+
+
+
+/**
+* HOMEPAGE
+**/
+
+
+.kmain {
+  background-image: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 40px;
+}
+
+.hero-img {
+  display: table;
+  position: absolute;
+  top: 20%;
+  right: 22%;
+  width: 20rem;
+  height: 20rem;
+  padding: 3.25rem;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+}
+
+.hero-img .hero-content {
+  width: 20rem;
+  height: 20rem;
+  padding: 3.25rem;
+  border: 1px solid #d1d1d1;
+  border-radius: 50%;
+}
+
+.hero-img .hero-content .hero-img-wrapper {
+  display: block;
+  min-width: 13rem;
+  position: relative;
+  z-index: 2;
+  min-height: 13rem;
+  border-radius: 50%;
+  padding: 4rem;
+  text-align: center;
+  background: #fff;
+  border-radius: #cfcfcf;
+  box-shadow: 0 0 50px -1px #cfcfcf;
+}
+
+.hero-img .hero-content .hero-bg-circle {
+  position: absolute;
+  transform-origin: 50% 12.5em;
+  transition: all .4s linear;
+  z-index: 0;
+}
+
+.hero-img .hero-content .hero-bg-circle-two {
+  top: calc(50% - 8.8em);
+  left: calc(50% - 4em);
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  transform: rotateZ(-34deg);
+}
+
+.hero-img .hero-content .hero-bg-circle-one {
+  top: calc(50% - 17em);
+  left: calc(50% - 8em);
+  transform: rotateZ(158deg);
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+.hero-img:after {
+  content: "";
+  display: block;
+}
+
+.hero-img .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ka-icon-set {
+  margin: 0.5em 1.0em;
+  opacity: 0.8;
+}
+
+.ka-icon-set a {
   cursor: pointer;
-  border: solid #5F91F5;
-  border-width: 0 0 1px;
-  color: #5F91F5;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 2.0em;
+}
+
+.ka-icon-set a:nth-child(2) {
+  margin: 0 0.9em;
+}
+
+.ka-icon-set .twitter:hover {
+  color: #2575fc;
+}
+
+.ka-icon-set .github:hover {
+  color: black;
+}
+
+.ka-icon-set .linkedin:hover {
+  color: #0077B5;
+}
+
+.ka-hero-link {
+  display: inline-block;
+  width: 90%;
+  background: #fff;
+  padding: 1.1em 3.0em 1.0em 2.0em;
+  margin: 0.4em 0 0.6em -2px;
+  transform: skew(20deg);
+  border-left: 5px solid #2575fc;
+  background: #fff;
+  background-size: 5px 100%;
+  background-position: 0 0, 100% 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: all .4s linear;
+  color: black;
+  cursor: pointer;
+}
+
+.ka-hero-link:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ka-hero-link:active {
+  box-shadow: 0 0px 0px transparent;
+}
+
+.ka-hero-link span {
+  display: inline-block;
+  transform: skew(-20deg);
+  vertical-align: text-bottom;
+  font-weight: 600;
+  font-size: 0.99em;
+  width: 90%;
+  opacity: 0.6;
+  text-align: left;
+}
+
+.ka-hero-link i {
+  display: inline-block;
+  transform: skew(-20deg);
+  font-size: 2.0em;
+  width: 10%;
+  text-align: right;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
