@@ -6,7 +6,6 @@ const path = require('path');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const promisify = require('es6-promisify');
-const passport = require('passport');
 
 const dev = process.env.NODE_ENV !== 'production';
 const next = require('next');
@@ -18,11 +17,10 @@ const { parse } = require('url');
 require('./models/User');
 require('./models/Journal');
 require('./models/Project');
-require('./handlers/passport');
-const authController = require('./controllers/authController');
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
 
+const authController = require('./controllers/authController');
 const apiRouter = require('./handlers/apiRouter');
 const { workRoutes } = require('./handlers/helpers');
 
@@ -34,9 +32,11 @@ mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', err => {
   console.error(`🚫 🚫 🚫 🚫 → ${err.message}`);
 });
+
 mongoose.connection.on("connected", () => {
   console.log(`✅  Mongo DB Connected`);
 });
+
 
 
 app.prepare().then(() => {
@@ -53,7 +53,6 @@ app.prepare().then(() => {
     })
   );
 
-
   server.use('/api', apiRouter);
 
   // Server-side
@@ -63,7 +62,6 @@ app.prepare().then(() => {
   server.get('/journal', (req, res) => {
     return app.render(req, res, '/journal', req.query);
   });
-  server.post('/passphrase/login', authController.login);
 
   server.get('/journal/:id', (req, res) => {
     console.log(req.params.id);
@@ -77,12 +75,12 @@ app.prepare().then(() => {
     return app.render(req, res, `/work/${projectLink}`, params);
   });
 
-  server.get('/add/journal', (req, res) => {
+  server.get('/add/journal', authController.isLoggedIn, (req, res) => {
     const params = route('/add/journal')(parse(req.url).pathname);
     return app.render(req, res, '/journalAdd', params);
   });
 
-  server.get('/add/work', (req, res) => {
+  server.get('/add/work', authController.isLoggedIn, (req, res) => {
     const params = route('/add/work')(parse(req.url).pathname);
     return app.render(req, res, '/workAdd', params);
   });

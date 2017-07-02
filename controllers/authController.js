@@ -1,20 +1,20 @@
-const passport = require('passport');
-const mongoose = require('mongoose');
-const User = mongoose.model('User');
-const promisify = require('es6-promisify');
 
-exports.login = passport.authenticate('local', {
-	failureRedirect: '/about',
-	successRedirect: '/'
-});
-
-exports.logout = (req, res) => {
-	req.logout();
-	res.redirect('/');
+/**
+ * Method to retrieve a project store from the database
+ */
+exports.login = (req, res, next) => {
+  console.log(req.body)
+  if (req.body.passphrase && req.body.passphrase === 'embrace') {
+    req.session.authenticated = true;
+    res.json({ auth: true });
+  } else {
+    res.json({ auth: false });
+  }
+  
 };
 
 exports.isLoggedIn = (req, res, next) => {
-	if(req.isAuthenticated()) {
+	if(req.session.authenticated) {
 		next();
 		return;
 	}

@@ -14,5 +14,6 @@ router.get('/project/:id', projectController.getProjectDetails);
 router.post('/project/create', projectController.createProject);
 
 
+router.post('/passphrase/login', authController.login);
 
 module.exports = router;

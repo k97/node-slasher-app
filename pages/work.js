@@ -12,14 +12,14 @@ class HomePage extends React.Component {
 
   navigateToPost(pageUrl){
     console.log(pageUrl);
-    let pKey = sessionStorage.getItem("passphrase");
+    let pKey = sessionStorage.getItem('k97passphrase');
     if (pKey && pKey.length) {
       Router.push("/work/" + pageUrl);
     } else {
-      Router.push("/passphrase?fromRoute="+pageUrl);
+      Router.push("/passphrase#"+pageUrl);
     }
   }
-
+  
   render() {
     return (
       <Layout title={"Projects - k97"}>

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Router from 'next/router';
 
 import axios from "axios";
 
@@ -15,7 +16,18 @@ class PassPhrase extends React.Component {
   onValidatePassPhrase(details){
     axios.post('/api/passphrase/login', details)
       .then(response => {
-        debugger
+        if(response.data.auth) {
+          sessionStorage.setItem('k97passphrase',true);
+          var locHash = location.hash;
+          if(locHash) {
+            let wPage = locHash.split('#')[1];
+            Router.push("/work/" + wPage);
+          } else {
+            Router.push("/work");
+          }
+        } else {
+          sessionStorage.removeItem('k97passphrase');
+        }
         this.setState({ loading: true });
       }).catch(error => {
         console.error(error);
@@ -50,10 +62,9 @@ class PassPhrase extends React.Component {
 
           <h1 className="mt0">Passphrase</h1>
           <p className="lh-copy measure">Please enter the passphrase to view this part of the website.</p>
-          
-          <form className="db w-100 passphrase-form" ref={input=>this.loginForm=input}
-            action="/passphrase/login" method="POST">
-            <input type="text" name="passphrase" className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph2 border-box" required />
+
+          <form className="db w-100 passphrase-form" onSubmit={(e)=>this.onSubmitPass(e)}>
+            <input type="text"  ref={input => this.passphrase = input}  className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph2 border-box" required value="embrace" />
             <button className="input-reset w-100 w-auto-ns bg-blue f2 ph4" type="submit">
               <i className="ion-ios-arrow-thin-right white  v-mid"></i>
             </button>

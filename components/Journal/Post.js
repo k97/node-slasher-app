@@ -20,12 +20,12 @@ class JournalPost extends React.Component {
         </header>
 
         <div className="ph3 ph4-m ph5-l black-80">
-          <p className="f4 mb1 center measure lh-copy i black-50">
+          <p className="f4 mb1 center lh-copy i black-50 measure-wide">
             {journal.summary}
           </p>
         </div>
         <article className="markdown-body">
-          <div className="fw4 measure db center f4 lh-copy black-60 ">
+          <div className="measure-wide fw4 measure db center f4 lh-copy black-60 ">
             <ReactMarkdown source={content} />
           </div>
         </article>
