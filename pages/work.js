@@ -9,15 +9,18 @@ import { projectLinks } from "../handlers/projectLinks";
 
 class HomePage extends React.Component {
 
-
   navigateToPost(pageUrl){
-    console.log(pageUrl);
-    let pKey = sessionStorage.getItem('k97passphrase');
-    if (pKey && pKey.length) {
-      Router.push("/work/" + pageUrl);
-    } else {
-      Router.push("/passphrase#"+pageUrl);
+    var authRequired = false;
+    const pKey = sessionStorage.getItem('k97passphrase');
+    for (var project of projectLinks) {
+      if (project.url == pageUrl && project.locked) {
+        authRequired = true;
+      }
     }
+    let route = (authRequired && !pKey)
+                ? `/passphrase#${pageUrl}`
+                : `/work/${pageUrl}`;
+    Router.push(route);
   }
   
   render() {

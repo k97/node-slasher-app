@@ -1,4 +1,4 @@
-export const projectLinks = [
+exports.projectLinks = [
   {
     "url": "resconnect",
     "title": "Resconnect",

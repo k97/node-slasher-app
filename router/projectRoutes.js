@@ -1,5 +1,6 @@
+const { projectLinks } = require('../handlers/projectLinks');
 
-exports.projectRoutes = (id) => {
+exports.setProjectPage = (id) => {
   var projects = {
     'game-of-life': 'gol',
     'javascript-30': 'javascript-30',
@@ -8,4 +9,17 @@ exports.projectRoutes = (id) => {
     'display-directions': 'display-directions'
   };
   return projects[id];
+}
+
+exports.onAuthorisedProject = (req, res, next) => {
+  let pId = req.params.id;
+  var authVal = false;
+  for (var project of projectLinks) {
+    if (project.locked && project.url == pId && !req.session.authenticated) {
+      return res.redirect('/passphrase#'+pId);
+    } else {
+      next();
+      return;
+    }
+  }
 }

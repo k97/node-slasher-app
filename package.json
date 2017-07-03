@@ -15,8 +15,7 @@
     "dev": "concurrently \"npm run watch\" \"next\" ",
     "start": "next start",
     "build": "next build",
-    "prod": "NODE_ENV=production && next build && node server.js",
-    "flow": "flow"
+    "prod": "NODE_ENV=production && next build && node server.js"
   },
   "dependencies": {
     "async": "2.1.4",

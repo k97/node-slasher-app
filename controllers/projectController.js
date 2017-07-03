@@ -20,7 +20,6 @@ exports.createProject = async (req, res) => {
  * Method to retrieve a project store from the database
  */
 exports.getProjectDetails = async (req, res, next) => {
-  console.log(req.params);
   try {
     const response = await Project.findOne({ customUrlSlug: req.params.id });
     res.json(response);

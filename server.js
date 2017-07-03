@@ -35,8 +35,7 @@ require('./models/Project');
 
 const authController = require('./controllers/authController');
 const apiRoutes = require('./router/apiRoutes');
-const { projectRoutes } = require('./router/projectRoutes');
-
+const { setProjectPage, onAuthorisedProject } = require('./router/projectRoutes');
 
 app.prepare().then(() => {
   const server = express();
@@ -57,7 +56,6 @@ app.prepare().then(() => {
   // Server-side
   const route = pathMatch();
 
-
   server.get('/journal', (req, res) => {
     return app.render(req, res, '/journal', req.query);
   });
@@ -67,10 +65,10 @@ app.prepare().then(() => {
     return app.render(req, res, '/journalDetail', params);
   });
 
-  server.get('/work/:id', authController.isLoggedIn, (req, res) => {
-    const projectLink = projectRoutes(req.params.id);
+  server.get('/work/:id', onAuthorisedProject, (req, res) => {
+    const projPage = setProjectPage(req.params.id);
     const params = route('/work/:id')(parse(req.url).pathname);
-    return app.render(req, res, `/work/${projectLink}`, params);
+    return app.render(req, res, `/work/${projPage}`, params);
   });
 
   server.get('/add/journal', authController.isLoggedIn, (req, res) => {
