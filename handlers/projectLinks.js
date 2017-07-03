@@ -6,7 +6,7 @@ export const projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/rescon.jpg"
+    "poster": "/static/img/placeholders/rescon.jpg"
   },
   {
     "url": "air",
@@ -15,7 +15,7 @@ export const projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/air.jpg"
+    "poster": "/static/img/placeholders/air.jpg"
   },
   {
     "url": "game-of-life",
@@ -32,7 +32,7 @@ export const projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": true,
-    "poster": "http://localhost:9797/static/img/placeholders/directions.jpg"
+    "poster": "/static/img/placeholders/directions.jpg"
   },
   {
     "url": "javascript-30",
@@ -50,7 +50,7 @@ export const projectLinks = [
     "locked": false,
     "caption": "",
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/crichq.jpg"
+    "poster": "/static/img/placeholders/crichq.jpg"
   },
   {
     "url": "sony-music-app",
@@ -59,7 +59,7 @@ export const projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/sony.jpg"
+    "poster": "/static/img/placeholders/sony.jpg"
   },
   {
     "url": "wonder",
@@ -68,7 +68,7 @@ export const projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/wonder.jpg"
+    "poster": "/static/img/placeholders/wonder.jpg"
   },
   {
     "url": "viewport-resizer",
@@ -77,6 +77,6 @@ export const projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "http://localhost:9797/static/img/placeholders/viewport.jpg"
+    "poster": "/static/img/placeholders/viewport.jpg"
   }
 ]

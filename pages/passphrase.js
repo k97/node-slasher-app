@@ -5,12 +5,23 @@ import Router from 'next/router';
 import axios from "axios";
 
 import Layout from "../components/Layout/index";
+import DisplayAlert from "../components/Home/DisplayAlert";
 
 class PassPhrase extends React.Component {
   constructor() {
     super();
+    this.state = {
+      alertInfo: {
+        type: 'success',
+        isVisible: false
+      }
+    }
     this.onSubmitPass = this.onSubmitPass.bind(this);
     this.onValidatePassPhrase = this.onValidatePassPhrase.bind(this);
+  }
+
+  displayError(){
+
   }
 
   onValidatePassPhrase(details){
@@ -19,6 +30,7 @@ class PassPhrase extends React.Component {
         if(response.data.auth) {
           sessionStorage.setItem('k97passphrase',true);
           var locHash = location.hash;
+          this.setState({ showError: false });
           if(locHash) {
             let wPage = locHash.split('#')[1];
             Router.push("/work/" + wPage);
@@ -26,6 +38,7 @@ class PassPhrase extends React.Component {
             Router.push("/work");
           }
         } else {
+          this.setState({ showError: true });
           sessionStorage.removeItem('k97passphrase');
         }
         this.setState({ loading: true });
@@ -63,6 +76,7 @@ class PassPhrase extends React.Component {
           <h1 className="mt0">Passphrase</h1>
           <p className="lh-copy measure">Please enter the passphrase to view this part of the website.</p>
 
+          {!this.state.showError ? <DisplayAlert type='error' msg="Cool" /> : ''}
           <form className="db w-100 passphrase-form" onSubmit={(e)=>this.onSubmitPass(e)}>
             <input type="text"  ref={input => this.passphrase = input}  className="mw-100 w-100 w5-ns f5 input-reset ba b--black-20 pv3 ph2 border-box" required value="embrace" />
             <button className="input-reset w-100 w-auto-ns bg-blue f2 ph4" type="submit">

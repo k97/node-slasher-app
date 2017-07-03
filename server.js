@@ -34,8 +34,8 @@ require('./models/Journal');
 require('./models/Project');
 
 const authController = require('./controllers/authController');
-const apiRouter = require('./handlers/apiRouter');
-const { workRoutes } = require('./handlers/helpers');
+const apiRoutes = require('./router/apiRoutes');
+const { projectRoutes } = require('./router/projectRoutes');
 
 
 app.prepare().then(() => {
@@ -44,7 +44,7 @@ app.prepare().then(() => {
   server.use(bodyParser.json());
   server.use(
     session({
-      secret: 'super-secret-key',
+      secret: process.env.SECRET,
       resave: false,
       saveUninitialized: false,
       cookie: { maxAge: 60000 },
@@ -52,7 +52,7 @@ app.prepare().then(() => {
     })
   );
 
-  server.use('/api', apiRouter);
+  server.use('/api', apiRoutes);
 
   // Server-side
   const route = pathMatch();
@@ -63,13 +63,12 @@ app.prepare().then(() => {
   });
 
   server.get('/journal/:id', (req, res) => {
-    console.log(req.params.id);
     const params = route('/journal/:id')(parse(req.url).pathname);
     return app.render(req, res, '/journalDetail', params);
   });
 
   server.get('/work/:id', authController.isLoggedIn, (req, res) => {
-    const projectLink = workRoutes(req.params.id);
+    const projectLink = projectRoutes(req.params.id);
     const params = route('/work/:id')(parse(req.url).pathname);
     return app.render(req, res, `/work/${projectLink}`, params);
   });

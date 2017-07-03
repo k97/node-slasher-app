@@ -19,3 +19,4 @@ test/**/out
 
 
 # Editor
+.vscode
