@@ -3,25 +3,27 @@ import Link from "next/link";
 import axios from "axios";
 
 import Layout from "../components/Layout/index";
-import AddForm from "../components/Journal/AddForm";
+import JournalForm from "../components/Journal/JournalForm";
 import JournalPost from "../components/Journal/Post";
+import DisplayAlert from "../components/Home/DisplayAlert";
 
-class AddJournal extends React.Component {
+class JournalAdd extends React.Component {
   constructor() {
     super();
     this.state = {
       newPost: {},
       isPostReady: false,
+      alertInfo: {
+        type: 'success',
+        isVisible: false
+      },
       displayFlags: {
         showAdd: true,
-        showPreview: false,
-        showSuccessAlert: true,
-        showErrorAlert : false
+        showPreview: false
       }
     };
-    this.newPost = this.newPost.bind(this);
+    this.savePost = this.savePost.bind(this);
     this.setPostReady = this.setPostReady.bind(this);
-    this.displayAlert = this.displayAlert.bind(this);
     this.handleResponse = this.handleResponse.bind(this);
   }
 
@@ -29,10 +31,10 @@ class AddJournal extends React.Component {
     this.setState({ isPostReady })
   }
 
-  newPost(newPost) {
-    this.setState({ newPost })
+  savePost(postObj) {
+    this.setState({ postObj })
     if(!this.state.isPostReady) return;
-    axios.post('/api/journal/create', newPost)
+    axios.post('/api/journal/create', postObj)
       .then(response => {
         this.handleResponse(response);
       }).catch(error => {
@@ -43,23 +45,17 @@ class AddJournal extends React.Component {
 
 
   handleResponse(val) {
+    let alertInfo = this.state.alertInfo;
+    alertInfo.isVisible = true;
     if(val.status == 200) {
       const createdVal = val.data;
-      this.setState({ newPost: createdVal, showSuccessAlert: true, showErrorAlert: false });
+      this.setState({ newPost: createdVal });
     } else {
-      this.setState({ newPost: this.state.newPost, showSuccessAlert: false, showErrorAlert: true });
+      if(response.status !== 200) this.state.alertInfo.type = 'error';
+      this.setState({ alertInfo, newPost: this.state.newPost });
     }
   }
 
-
-  displayAlert() {
-    return (
-        <section
-          className={`flex items-center justify-center pa4 white bg-green ${this.state.displayFlags.showSuccessAlert ? "bb" : ""}`}>
-          <span className="lh-title ml3">Some info that you want to call attention to.</span>
-        </section>
-    );
-  }
 
   toggleView(currentTab) {
     let displayFlags;
@@ -86,21 +82,21 @@ class AddJournal extends React.Component {
             </a>
           </div>
 
-          {this.displayAlert}
           <section className="w-100">
-            <div
-              className="cf"
-              className={this.state.displayFlags.showAdd ? "" : "dn"}
-            >
-              <AddForm newPost={this.newPost} setPostReady={this.setPostReady} />
+
+            {/*FORM VIEW*/}
+            <div className="cf" className={this.state.displayFlags.showAdd ? "" : "dn"}>
+              {this.state.alertInfo.isVisible ? <span className="db ph5 mt4"><DisplayAlert type={this.state.alertInfo.type} /></span> : '' }
+
+              <JournalForm setPostReady={this.setPostReady} savePost={this.savePost} newPost={this.state.newPost} editMode={false}/>
             </div>
-            <div
-              className="cf"
-              className={this.state.displayFlags.showPreview ? "" : "dn"}
-            >
+
+            {/*PREVIEW*/}
+            <div className="cf" className={this.state.displayFlags.showPreview ? "" : "dn"}>
               <h1 className="pv2 ph5"> Preview Post</h1>
               <JournalPost detail={this.state.newPost} />
             </div>
+
           </section>
         </div>
       </Layout>
@@ -108,4 +104,4 @@ class AddJournal extends React.Component {
   }
 }
 
-export default AddJournal;
+export default JournalAdd;

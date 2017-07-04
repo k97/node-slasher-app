@@ -54,3 +54,22 @@ exports.getJournalDetails = async (req, res, next) => {
     res.status(400).json(error).end();
   }
 };
+
+
+/**
+ * Method to update Journal posts
+ */
+exports.updateJournal = async (req, res) => {
+  try {
+    const journalRes = await Journal.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true
+    }).exec();
+    res.status(200).json(req.body);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error).end();
+  }
+  return res;
+};
+
