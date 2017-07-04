@@ -93,7 +93,7 @@ class HomePage extends React.Component {
             {this.heroText()}
           </div>
 
-          <div className="fl w-50 seiso-tach-container dn-m">
+          <div className="fl w-50 dn-m hero-img-container">
             {this.heroComponent()}
           </div>
         </section>
