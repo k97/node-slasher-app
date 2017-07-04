@@ -42,3 +42,22 @@ exports.getProjects = async (req, res) => {
   return res;
 };
 
+
+/**
+ * Method to update projects
+ */
+exports.updateProject= async (req, res) => {
+  try {
+    const journalRes = await Project.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true
+    }).exec();
+    res.status(200).json(req.body);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error).end();
+  }
+  return res;
+};
+
+
