@@ -10,8 +10,8 @@ export default () => (
       }
       `}
     </style>
-    <div className="body-content pv5 ph5 f4 black-90 ">
-      <article className="pa3 pa5-ns">
+    <div className="body-content pt1 ph5 f4 black-90 ">
+      <article className="pv4 ph3 ph5-ns">
         <h1 className="f3 f2-m f1-l">About</h1>
         <div className="measure lh-copy ft-serif black-70">
           <p>I am Karthikeyan Rajendran and I like to think myself as part designer and a part coder. I have been tinkering with web ever since I started using it and I spend most of my time on designing and building digital products.
