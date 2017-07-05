@@ -74,14 +74,12 @@ app.prepare().then(() => {
     return app.render(req, res, `/work/${projPage}`, params);
   });
 
-  server.get('/add/journal', (req, res) => {
+  server.get('/add/journal', authController.isLoggedIn, (req, res) => {
     const params = route('/add/journal')(parse(req.url).pathname);
     return app.render(req, res, '/journalAdd', params);
   });
 
-
-  // server.get('/add/work', authController.isLoggedIn, (req, res) => {
-  server.get('/add/work', (req, res) => {
+  server.get('/add/work', authController.isLoggedIn, (req, res) => {
     const params = route('/add/work')(parse(req.url).pathname);
     return app.render(req, res, '/workAdd', params);
   });
