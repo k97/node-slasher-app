@@ -24,7 +24,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "https://s19.postimg.org/xju5bfmyb/gol.jpg"
+    "poster": "/static/img/placeholders/gol.jpg"
   },{
     "url": "display-directions",
     "title": "Display Directions",
@@ -41,7 +41,7 @@ exports.projectLinks = [
     "locked": false,
     "isProjectWip": true,
     "caption": "Courtesy: <strong>Wes Bos</strong>",
-    "poster": "https://s19.postimg.org/5kzzkklbn/js1.jpg"
+    "poster": "/static/img/placeholders/js30.jpg"
   },
   {
     "url": "project-crichq",
@@ -80,3 +80,6 @@ exports.projectLinks = [
     "poster": "/static/img/placeholders/viewport.jpg"
   }
 ]
+
+// /static/img/placeholders/
+//   https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/
