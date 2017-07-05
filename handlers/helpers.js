@@ -16,4 +16,3 @@ exports.formateDate = (date) => {
   const formattedVal = `${day} ${monthNames[monthIndex].substring(0, 3)} ${year}`;
   return formattedVal;
 };
-

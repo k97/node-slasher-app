@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import SimpleMDE from 'react-simplemde-editor';
 
 class JournalForm extends React.Component {
@@ -49,7 +49,7 @@ class JournalForm extends React.Component {
   
 
   render() {
-    let saveBtnText = 'Save';
+    let saveBtnText = 'Create';
     if(this.props.editMode) {
       saveBtnText = 'Update';
       this.state.post = this.props.newPost;
@@ -57,7 +57,7 @@ class JournalForm extends React.Component {
     
     return(
       <section className="pv2 ph5">
-        <h1>🔐 New journal</h1>
+        <h1>🔐 {saveBtnText} journal</h1>
         <form ref={input=>this.postForm=input} onSubmit={(e)=>this.savePost(e)}>
           <section className="measure">
 
@@ -111,9 +111,8 @@ class JournalForm extends React.Component {
                     value={this.state.post.summary} 
                     onChange={this.handleInputChange}/>
 
-
             <label htmlFor="content" className="mt3 f5 fw6 db">Content</label>
-            <div className="ft-serif">
+            <div className="">
               <SimpleMDE value={this.state.post.content} 
                         onChange={this.handleMarkdownContent} />
             </div>
@@ -127,11 +126,6 @@ class JournalForm extends React.Component {
                       onChange={this.handleInputChange} />
               <label htmlFor="published" className="lh-copy">Publish</label>
             </div>
-
-            {!this.props.editMode 
-              ? <button type="submit" className="f5 link ph4 pv3 mv4 mr3 dib black-70 ba b--black-50 bg-white shadow-hover">Close</button>
-              : ''
-            }
             
             <button type="submit" className="f5 link  ph4 pv3 mv4 dib white bg-dark-gray ba b--black-20 shadow-hover">{saveBtnText}</button>
         </form>

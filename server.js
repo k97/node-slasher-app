@@ -17,8 +17,11 @@ const { parse } = require('url');
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
 
-// Connect to our Database and handle an bad connections
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE, {
+  server: {
+    reconnectTries: Number.MAX_VALUE
+  }
+});
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 
 // https://github.com/Automattic/mongoose/issues/4135
