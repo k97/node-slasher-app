@@ -5,6 +5,7 @@ import Layout from '../components/Layout/index';
 import JournalPost from '../components/Journal/Post';
 import JournalForm from "../components/Journal/JournalForm";
 import DisplayAlert from "../components/Home/DisplayAlert";
+import UILoader from '../components/Home/UILoader';
 
 class JDetail extends React.Component {
 
@@ -16,8 +17,8 @@ class JDetail extends React.Component {
     super(props);
     this.state = {
       id: null,
+      loading: true,
       journalDetail: {},
-      isEditVisible: false,
       alertInfo: {
         type: 'success',
         isVisible: false
@@ -32,11 +33,6 @@ class JDetail extends React.Component {
     this.fetchJournalDetail();
   }
 
-  toggleEditView() {
-    let isEditVisible = !this.state.isEditVisible
-    this.setState({ isEditVisible })
-  }
-
   setPostReady(isPostReady) {
     this.setState({ isPostReady })
   }
@@ -49,9 +45,9 @@ class JDetail extends React.Component {
         let alertInfo = this.state.alertInfo;
         alertInfo.isVisible = true;
         if(response.status !== 200) this.state.alertInfo.type = 'error';
-        this.setState({  alertInfo });
+        this.setState({  alertInfo, loading: false });
       }).catch(error => {
-        console.error(error);
+        this.setState({ loading: false });
       });
   }
 
@@ -63,7 +59,7 @@ class JDetail extends React.Component {
         .get('/api/journals/' + urlVal)
         .then(response => {
           var journalDetail = response.data;
-          this.setState({ journalDetail });
+          this.setState({ journalDetail, loading: false });
         })
         .catch(error => {
           this.setState({ loading: false });
@@ -86,29 +82,29 @@ class JDetail extends React.Component {
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
               <JournalPost detail={this.state.journalDetail}></JournalPost>
+              <UILoader loading={this.state.loading} />
             </div>
           </section>
 
 
-          <section className="admin-btn">
+          <section className="admin-section">
             <div className="w-100 tc ft-head">
-              <a onClick={this.toggleEditView.bind(this)}
-                className="tc pointer f5 grow no-underline ph4 pv3 br3 mv3 dib white bg-blue">
-                Toggle Edit Content
+              <a className="ft-head tc pointer ttu tracked fw7 f6 grow no-underline ph4 pv3 br3 mv1 dib  ba b--blue blue">
+                Edit Content
               </a>
             </div>
             <span className="db ph4">
-              {(this.state.isEditVisible && this.state.alertInfo.isVisible) ? <DisplayAlert type={this.state.alertInfo.type} /> : '' }
+              { this.state.alertInfo.isVisible
+                  ? <DisplayAlert type={this.state.alertInfo.type} />
+                  : ''
+              }
             </span>
-            {
-              this.state.isEditVisible
-                ? <JournalForm setPostReady={this.setPostReady}
-                  savePost={this.updateJournalDetail}
-                  newPost={this.state.journalDetail}
-                  editMode={true} />
-                : ''
-            }
+            <JournalForm setPostReady={this.setPostReady}
+              savePost={this.updateJournalDetail}
+              newPost={this.state.journalDetail}
+              editMode={true} />
           </section>
+
         </div>
       </Layout>
     );

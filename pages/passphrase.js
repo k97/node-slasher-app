@@ -6,11 +6,13 @@ import axios from "axios";
 
 import Layout from "../components/Layout/index";
 import DisplayAlert from "../components/Home/DisplayAlert";
+import UILoader from '../components/Home/UILoader';
 
 class Passphrase extends React.Component {
   constructor() {
     super();
     this.state = {
+      loading: false,
       alertInfo: {
         type: 'success',
         isVisible: false
@@ -39,6 +41,7 @@ class Passphrase extends React.Component {
   }
 
   onValidatePassphrase(details) {
+    this.setState({ loading: true });
     axios.post('/api/passphrase/login', details)
       .then(response => {
         const alertVal = response.data;
@@ -50,7 +53,7 @@ class Passphrase extends React.Component {
           sessionStorage.removeItem('k97passphrase');
         }
         this.setupAlert(alertVal.auth, alertVal.message);
-        this.setState({ loading: true });
+        this.setState({ loading: false });
       }).catch(error => {
         console.error(error);
         this.setState({ loading: false });
@@ -91,6 +94,8 @@ class Passphrase extends React.Component {
                 <i className="ion-ios-arrow-thin-right white  v-mid"></i>
               </button>
             </form>
+
+            <UILoader loading={this.state.loading} />
 
             <span className="db mt3">
               {

@@ -348,11 +348,23 @@ select {
   vertical-align: middle;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.admin-section {
+  display: none!important
+}
+
+.ka-loader {
+  text-align: center;
+  margin: 50px;
+}
+.ka-loader i{
+  display: inline-block;
+  -webkit-animation: spin 1s infinite linear;
+  margin: 0;
+  line-height: 0;
+  font-size: 4.5rem;
+}
+
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
 }

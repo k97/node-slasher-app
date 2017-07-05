@@ -4,6 +4,7 @@ import axios from "axios";
 import Layout from "../components/Layout/index";
 import JournalFilter from "../components/Journal/Filter";
 import JournalCard from "../components/Journal/Card";
+import UILoader from '../components/Home/UILoader';
 
 class JList extends React.Component {
 
@@ -20,13 +21,14 @@ class JList extends React.Component {
       count: 0,
       page: 1,
       totalPages: null,
-      type: {}
+      type: {},
+      loading: true
     };
     this.fetchJournals = this.fetchJournals.bind(this);
+    this.renderNoRecordsMsg = this.renderNoRecordsMsg.bind(this);
     this.renderJournalCard = this.renderJournalCard.bind(this);
     this.loadMoreBtn = this.loadMoreBtn.bind(this);
     this.filterPosts = this.filterPosts.bind(this);
-    // this.handlePagination = this.handlePagination.bind(this);
   }
 
 
@@ -96,6 +98,14 @@ class JList extends React.Component {
     });
   }
 
+  renderNoRecordsMsg(){
+    return (
+        !this.state.loading
+          ? <div className="tc ma5 center pv6"><p className="b f4 pv6  black-80 fw6"><i className="db ion-sad-outline f2 black-70"></i>Sorry, no records to display.</p></div>
+          : ''
+    );
+  }
+
   renderJournalCard(jList) {
     return (
       Object.keys(jList).map(key => (
@@ -106,7 +116,6 @@ class JList extends React.Component {
 
   render() {
     let { journalList, total } = this.state;
-    const noRecords = (<div className="tc ma5 center pv6"><p className="b f4 pv6  black-80 fw6"><i className="db ion-sad-outline f2 black-70"></i>Sorry, no records to display.</p></div>);
     return (
       <Layout title={"Journal - Karthik"}>
         <style global jsx>{`
@@ -121,8 +130,12 @@ class JList extends React.Component {
           <JournalFilter filterPosts={this.filterPosts} />
           <section className="w-100 ph0-ns pa3-m pa3-l">
             <div className="ka-list pa0-ns pa2">
-              {(journalList.length > 0) ? this.renderJournalCard(journalList) : noRecords}
+              {(journalList.length > 0)
+                ? this.renderJournalCard(journalList)
+                : this.renderNoRecordsMsg()
+              }
             </div>
+            <UILoader loading={this.state.loading} />
           </section>
           { ((this.state.page < this.state.totalPages) && (journalList.length > 0)) ? this.loadMoreBtn() : '' }
         </div>
