@@ -6,7 +6,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/rescon.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/rescon.jpg"
   },
   {
     "url": "air",
@@ -15,7 +15,7 @@ exports.projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/air.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/air.jpg"
   },
   {
     "url": "game-of-life",
@@ -24,7 +24,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/gol.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/gol.jpg"
   },{
     "url": "display-directions",
     "title": "Display Directions",
@@ -32,7 +32,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": true,
-    "poster": "/static/img/placeholders/directions.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/directions.jpg"
   },
   {
     "url": "javascript-30",
@@ -41,7 +41,7 @@ exports.projectLinks = [
     "locked": false,
     "isProjectWip": true,
     "caption": "Courtesy: <strong>Wes Bos</strong>",
-    "poster": "/static/img/placeholders/js30.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/js30.jpg"
   },
   {
     "url": "project-crichq",
@@ -50,7 +50,7 @@ exports.projectLinks = [
     "locked": false,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/crichq.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/crichq.jpg"
   },
   {
     "url": "sony-music-app",
@@ -59,7 +59,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/sony.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/sony.jpg"
   },
   {
     "url": "wonder",
@@ -68,7 +68,7 @@ exports.projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/wonder.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/wonder.jpg"
   },
   {
     "url": "viewport-resizer",
@@ -77,9 +77,9 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/viewport.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/viewport.jpg"
   }
 ]
 
 // /static/img/placeholders/
-//   https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/
+// /https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/
