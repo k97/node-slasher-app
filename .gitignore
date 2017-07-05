@@ -4,7 +4,9 @@ dist
 
 # Dependencies
 node_modules
-.variables.env
+variables.env
+package-lock.json
+package-locks.json
 
 # Logs
 *.log
