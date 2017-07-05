@@ -1,35 +1,34 @@
 const express = require('express');
+const next = require('next')
+
 const bodyParser = require('body-parser');
 const session = require('express-session');
-const path = require('path');
+
+const pathMatch = require('path-match');
+const { parse } = require('url');
 
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const promisify = require('es6-promisify');
 
-const dev = process.env.NODE_ENV !== 'production';
-const next = require('next');
-const pathMatch = require('path-match');
-const app = next({ dev });
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
 const handle = app.getRequestHandler();
-const { parse } = require('url');
 
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
 
 mongoose.connect(process.env.DATABASE, {
+  useMongoClient: true,
   server: {
     reconnectTries: Number.MAX_VALUE
   }
 });
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 
-// https://github.com/Automattic/mongoose/issues/4135
-mongoose.connection.on('error', err => {
-  console.error(`🚫 🚫 🚫 🚫 → ${err.message}`);
-});
-
-mongoose.connection.on("connected", () => {
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, '🚫 🚫 🚫 🚫 → connection error:'));
+db.once('open', function() {
   console.log(`✅  Mongo DB Connected`);
 });
 
@@ -40,8 +39,11 @@ const authController = require('./controllers/authController');
 const apiRoutes = require('./router/apiRoutes');
 const { setProjectPage, onAuthorisedProject } = require('./router/projectRoutes');
 
-app.prepare().then(() => {
+
+app.prepare()
+.then(() => {
   const server = express();
+
 
   server.use(bodyParser.json());
   server.use(
@@ -56,7 +58,7 @@ app.prepare().then(() => {
 
   server.use('/api', apiRoutes);
 
-  // Server-side
+  // Server-side route handling
   const route = pathMatch();
 
   server.get('/journal', (req, res) => {
@@ -88,13 +90,9 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  // output all uncaught exceptions
-  process.on('uncaughtException', err => console.error('uncaught exception:', err));
-  process.on('unhandledRejection', error => console.error('unhandled rejection:', error));
-
-  server.set('port', process.env.PORT || 7777);
-  const container = server.listen(server.get('port'), err => {
-    if (err) throw err;
-    console.log(`🌍   Express running → PORT ${container.address().port}`);
-  });
-});
+  const port = process.env.PORT || 3000;
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`🌍   Express running → PORT ${port}`);
+  })
+})

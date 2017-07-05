@@ -46,7 +46,6 @@ exports.getJournals = async (req, res) => {
  * Method to retrieve a store from the database
  */
 exports.getJournalDetails = async (req, res, next) => {
-  console.log(req.params);
   try {
     const response = await Journal.findOne({ customUrlSlug: req.params.id });
     res.json(response);
