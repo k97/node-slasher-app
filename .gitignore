@@ -6,7 +6,6 @@ dist
 node_modules
 variables.env
 package-lock.json
-package-locks.json
 
 # Logs
 *.log
