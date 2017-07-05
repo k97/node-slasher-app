@@ -2,7 +2,8 @@
 exports.dump = (obj) => JSON.stringify(obj, null, 2);
 
 exports.formateDate = (date) => {
-  date = date ? new Date(date) : new Date();
+  if(!date) return;
+  date = new Date(date);
   const monthNames = [
     "January", "February", "March",
     "April", "May", "June", "July",
