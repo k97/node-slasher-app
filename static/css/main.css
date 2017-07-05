@@ -2,7 +2,7 @@
 Pulsating CSS
 https://jsbin.com/hoxokeheto/1/edit?output
 */
-* { box-sizing: border-box}
+* { -webkit-box-sizing: border-box; box-sizing: border-box}
 
 @font-face {
     font-family: 'FGB';
@@ -35,7 +35,8 @@ h1, h2, h3, h4, h5, h6, .ft-head {
 }
 
 .kheader {
-    box-shadow: 0 1px 1px #e1e1e1;
+    -webkit-box-shadow: 0 1px 1px #e1e1e1;
+            box-shadow: 0 1px 1px #e1e1e1;
 }
 
 .kheader nav {
@@ -117,27 +118,40 @@ select {
   height: 40px;
   background: #fff;
   border-radius: 0;
-  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+          box-shadow: 0 0 0 0 transparent inset;
   -webkit-transition: color .1s ease,border-color .1s ease;
+  -o-transition: color .1s ease,border-color .1s ease;
   transition: color .1s ease,border-color .1s ease;
 }
 
 
 .ka-list {
-  column-count: 3;
-  column-gap: 1.0em;
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 1.0em;
+     -moz-column-gap: 1.0em;
+          column-gap: 1.0em;
 }
 
 .ka-work-list {
-  column-count: 4;
-  column-gap: 1.0em;
+  -webkit-column-count: 4;
+     -moz-column-count: 4;
+          column-count: 4;
+  -webkit-column-gap: 1.0em;
+     -moz-column-gap: 1.0em;
+          column-gap: 1.0em;
 }
 
 .ka-list-item, .ka-work-list-item {
     display: block;
     margin:0 0 1.0em;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -webkit-transition: all .4s linear;
+    -o-transition: all .4s linear;
     transition: all .4s linear;
 
   page-break-inside: avoid; /* For Firefox. */
@@ -146,39 +160,52 @@ select {
 }
 .ka-list-item:hover, .ka-work-list-item:hover {
     cursor: pointer;
-  box-shadow:0 12px 6px 2px #cdcdcd
+  -webkit-box-shadow:0 12px 6px 2px #cdcdcd;
+          box-shadow:0 12px 6px 2px #cdcdcd
 }
 
 @media (max-width: 599px) {
     .ka-list,.ka-work-list {
-        column-count: 1;
+        -webkit-column-count: 1;
+           -moz-column-count: 1;
+                column-count: 1;
     }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
     .ka-list,.ka-work-list {
-        column-count: 2;
+        -webkit-column-count: 2;
+           -moz-column-count: 2;
+                column-count: 2;
     }
 }
 
 @media (min-width: 960px) and (max-width: 1279px) {
     .ka-list,.ka-work-list {
-        column-count: 3;
+        -webkit-column-count: 3;
+           -moz-column-count: 3;
+                column-count: 3;
     }
 }
 
 @media (min-width: 1280px)  {
     .ka-work-list {
-        column-count: 4;
+        -webkit-column-count: 4;
+           -moz-column-count: 4;
+                column-count: 4;
     }
 }
 
 .ka-work-list-item img  {
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
-	filter: grayscale(90%);
+	-webkit-filter: grayscale(90%);
+	        filter: grayscale(90%);
 }
 .ka-work-list-item:hover img  {
-	filter: grayscale(0%);
+	-webkit-filter: grayscale(0%);
+	        filter: grayscale(0%);
 }
 
 
@@ -204,6 +231,9 @@ select {
 * HOMEPAGE
 **/
 .kmain {
+  background-image: -webkit-gradient(linear, left top, right top, from(#2575fc), to(#6a11cb));
+  background-image: -webkit-linear-gradient(left, #2575fc 0%, #6a11cb 100%);
+  background-image: -o-linear-gradient(left, #2575fc 0%, #6a11cb 100%);
   background-image: linear-gradient(to right, #2575fc 0%, #6a11cb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -241,12 +271,17 @@ select {
   text-align: center;
   background: #fff;
   border-radius: #cfcfcf;
-  box-shadow: 0 0 50px -1px #cfcfcf;
+  -webkit-box-shadow: 0 0 50px -1px #cfcfcf;
+          box-shadow: 0 0 50px -1px #cfcfcf;
 }
 
 .hero-img .hero-content .hero-bg-circle {
   position: absolute;
-  transform-origin: 50% 12.5em;
+  -webkit-transform-origin: 50% 12.5em;
+      -ms-transform-origin: 50% 12.5em;
+          transform-origin: 50% 12.5em;
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
   transition: all .4s linear;
   z-index: 0;
 }
@@ -254,14 +289,23 @@ select {
 .hero-img .hero-content .hero-bg-circle-two {
   top: calc(50% - 8.8em);
   left: calc(50% - 4em);
+  background-image: -webkit-linear-gradient(110deg, #b721ff 0%, #21d4fd 100%);
+  background-image: -o-linear-gradient(110deg, #b721ff 0%, #21d4fd 100%);
   background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
-  transform: rotateZ(-34deg);
+  -webkit-transform: rotateZ(-34deg);
+      -ms-transform: rotate(-34deg);
+          transform: rotateZ(-34deg);
 }
 
 .hero-img .hero-content .hero-bg-circle-one {
   top: calc(50% - 17em);
   left: calc(50% - 8em);
-  transform: rotateZ(158deg);
+  -webkit-transform: rotateZ(158deg);
+      -ms-transform: rotate(158deg);
+          transform: rotateZ(158deg);
+  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), to(#2575fc));
+  background-image: -webkit-linear-gradient(left, #6a11cb 0%, #2575fc 100%);
+  background-image: -o-linear-gradient(left, #6a11cb 0%, #2575fc 100%);
   background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 }
 
@@ -287,8 +331,8 @@ select {
   font-size: 2.0em;
 }
 
-.ka-icon-set a:nth-child(2) {
-  margin: 0 0.9em;
+.ka-icon-set a {
+  margin: 0 0.9em 0 0;
 }
 
 .ka-icon-set .twitter:hover {
@@ -302,6 +346,9 @@ select {
 .ka-icon-set .linkedin:hover {
   color: #0077B5;
 }
+.ka-icon-set .info:hover {
+  color: #7d46d0;
+}
 
 .ka-hero-link {
   display: inline-block;
@@ -309,28 +356,37 @@ select {
   background: #fff;
   padding: 1.1em 3.0em 1.0em 2.0em;
   margin: 0.4em 0 0.6em -2px;
-  transform: skew(20deg);
+  -webkit-transform: skew(20deg);
+      -ms-transform: skew(20deg);
+          transform: skew(20deg);
   border-left: 5px solid #2575fc;
   background: #fff;
   background-size: 5px 100%;
   background-position: 0 0, 100% 0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
   transition: all .4s linear;
   color: black;
   cursor: pointer;
 }
 
 .ka-hero-link:hover {
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ka-hero-link:active {
-  box-shadow: 0 0px 0px transparent;
+  -webkit-box-shadow: 0 0px 0px transparent;
+          box-shadow: 0 0px 0px transparent;
 }
 
 .ka-hero-link span {
   display: inline-block;
-  transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
+          transform: skew(-20deg);
   vertical-align: text-bottom;
   font-weight: 600;
   font-size: 0.99em;
@@ -341,7 +397,9 @@ select {
 
 .ka-hero-link i {
   display: inline-block;
-  transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
+          transform: skew(-20deg);
   font-size: 2.0em;
   width: 10%;
   text-align: right;

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 import Layout from "../components/Layout/index";
-// import indexCSS from "styles/home.scss";
 
 class HomePage extends React.Component {
 
@@ -33,6 +32,10 @@ class HomePage extends React.Component {
 
           <a href="https://www.linkedin.com/in/rajendrankarthikeyan/" target="_blank" className="linkedin">
             <i className="ion-social-linkedin-outline"></i>
+          </a>
+
+          <a href="/info" className="info" title="Build info for this site">
+            <i className="ion-ios-information-outline"></i>
           </a>
         </div>
 
