@@ -157,6 +157,7 @@ select {
   page-break-inside: avoid; /* For Firefox. */
   -webkit-column-break-inside: avoid; /* For Chrome & friends. */
   break-inside: avoid; /* For standard browsers like IE. :-) */
+  cursor: default!important;
 }
 .ka-list-item:hover, .ka-work-list-item:hover {
     cursor: pointer;

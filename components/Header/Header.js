@@ -1,12 +1,20 @@
-import Head from 'next/head';
+import React from 'react';
 import Link from 'next/link';
+import NProgress from 'nprogress';
+import Router from 'next/router';
+
+Router.onRouteChangeStart = () => {
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
+
 
 class Header extends React.Component {
 
 render() {
   return (
     <header className="w-100 fixed top-0 kheader">
-
       <nav className="db dt-l w-100 border-box ph5-l ttu tracked bb b--black-10 ft-head">
         <Link href='/'>
           <a className="klogo db dtc-l v-mid mid-gray link w-100 w-25-l tc tl-l m0 p0" title="Home">
@@ -30,8 +38,6 @@ render() {
         </div>
 
       </nav>
-
-
     </header>
     );
   }

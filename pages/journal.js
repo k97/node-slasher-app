@@ -56,8 +56,8 @@ class JList extends React.Component {
    */
   loadMoreBtn() {
     return (
-      <div className="flex items-center justify-center pa4">
-        <a onClick={this.handlePagination.bind(this, this.state.page +1)} className="f5 no-underline black-80 bg-animate hover-bg-black hover-white inline-flex items-center ph4 pv2 shadow-hover ba br2">
+      <div className="flex items-center justify-center pb4">
+        <a onClick={this.handlePagination.bind(this, this.state.page +1)} className="f5 no-underline blue bg-animate hover-bg-blue hover-white inline-flex items-center ph4 pv2 shadow-hover ba b--blue br2">
           <span className="pr1" title={`Page: ${this.state.page} - Total : ${this.state.count}`}>Load more</span>
         </a>
       </div>
@@ -101,7 +101,7 @@ class JList extends React.Component {
   renderNoRecordsMsg(){
     return (
         !this.state.loading
-          ? <div className="tc ma5 center pv6"><p className="b f4 pv6  black-80 fw6"><i className="db ion-sad-outline f2 black-70"></i>Sorry, no records to display.</p></div>
+          ? <div className="tc ma5 center pv6"><p className="fw5 f4 pv6 black-50 "><i className="db ion-sad-outline f1 black-40"></i>Sorry, no records to display.</p></div>
           : ''
     );
   }
