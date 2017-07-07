@@ -101,7 +101,7 @@ header {
 }
 
 .bg--journal {
-  background: url("../img/science1.png") repeat;
+  background: url("https://s3-ap-southeast-2.amazonaws.com/k97static/journal/journal-background.png") repeat;
   background-size: 30%;
 }
 
