@@ -21,10 +21,10 @@ class WorkCard extends React.Component {
     };
 
     return (
-      <section className="ka-work-list-item pt1 bg-white br2 ba b--black-10 ">
+      <section className="pt1 bg-white br2 ba b--black-10">
         <div className="pb1 ph3">
           <h1 className="dib f6 ttu tracked black-70">
-            {cModel.url}
+            {cModel.title}
           </h1>
           {cModel.locked ? this.templateLock() : ""}
         </div>

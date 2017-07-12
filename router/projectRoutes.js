@@ -6,7 +6,10 @@ exports.setProjectPage = (id) => {
     'javascript-30': 'javascript-30',
     'resconnect': 'resconnect',
     'air': 'air',
-    'display-directions': 'display-directions'
+    'display-directions': 'display-directions',
+    'sony-music-app': 'sony-music-app',
+    'viewport-resizer': 'viewport-resizer',
+    'crichq': 'crichq'
   };
   return projects[id];
 }

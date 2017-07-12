@@ -26,7 +26,7 @@ body {
 }
 
 body, body input, body textarea, body button, body select,.ft-serif  {
-  font-family: 'FGB', 'Avenir Next', -apple-system, BlinkMacSystemFont, Roboto,"Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'FGB', 'Avenir Next', -apple-system, BlinkMacSystemFont, Roboto,"Segoe UI", Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 
@@ -44,8 +44,10 @@ h1, h2, h3, h4, h5, h6, .ft-head {
 }
 
 header {
+  transition: all 500ms;
   z-index: 9999;
 }
+
 
 .ka-link, .measure a, .measure-wide a {
   cursor: pointer;
@@ -53,6 +55,10 @@ header {
   border-width: 0 0 1px;
   color: #5F91F5;
   text-decoration: none;
+}
+
+.measure .load-tach a, .measure-wide .load-tach a {
+  border-width: 1px;
 }
 
 .main-content {
@@ -408,7 +414,7 @@ select {
 }
 
 .admin-section {
-  display: none!important
+   display: none!important
 }
 
 .ka-loader {
@@ -426,4 +432,18 @@ select {
 @-webkit-keyframes spin {
     0%  {-webkit-transform: rotate(0deg);}
     100% {-webkit-transform: rotate(360deg);}
+}
+
+
+.medium-zoom--open header {
+  z-index: -99;
+}
+
+.medium-zoom--open .main-content {
+  position: relative;
+  z-index: inherit;
+}
+
+.medium-zoom-overlay {
+  background: #F0F3F6!important;
 }

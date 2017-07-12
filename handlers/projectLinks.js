@@ -6,16 +6,16 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/rescon.jpg"
+    "poster": "/static/img/placeholders/rescon.jpg"
   },
   {
     "url": "air",
     "title": "AIR",
-    "blurb": "Geo-mapping angular app design & development",
+    "blurb": "Geo-mapping Angular app design & development",
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/air.jpg"
+    "poster": "/static/img/placeholders/air.jpg"
   },
   {
     "url": "game-of-life",
@@ -24,7 +24,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/gol.jpg"
+    "poster": "/static/img/placeholders/gol.jpg"
   },{
     "url": "display-directions",
     "title": "Display Directions",
@@ -32,7 +32,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": true,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/directions.jpg"
+    "poster": "/static/img/placeholders/directions.jpg"
   },
   {
     "url": "javascript-30",
@@ -41,16 +41,16 @@ exports.projectLinks = [
     "locked": false,
     "isProjectWip": true,
     "caption": "Courtesy: <strong>Wes Bos</strong>",
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/js30.jpg"
+    "poster": "/static/img/placeholders/js30.jpg"
   },
   {
-    "url": "project-crichq",
+    "url": "crichq",
     "title": "CricHQ",
     "blurb": "Web & mobile application design and development",
     "locked": false,
     "caption": "",
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/crichq.jpg"
+    "poster": "/static/img/placeholders/crichq.jpg"
   },
   {
     "url": "sony-music-app",
@@ -59,7 +59,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/sony.jpg"
+    "poster": "/static/img/placeholders/sony.jpg"
   },
   {
     "url": "wonder",
@@ -68,7 +68,7 @@ exports.projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/wonder.jpg"
+    "poster": "/static/img/placeholders/wonder.jpg"
   },
   {
     "url": "viewport-resizer",
@@ -77,9 +77,20 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/viewport.jpg"
+    "poster": "/static/img/placeholders/viewport.jpg"
   }
 ]
 
+
 // /static/img/placeholders/
 // /https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/
+
+  // {
+  //   "url": "project-ek",
+  //   "title": "Emirates.com",
+  //   "blurb": "Webpage construction and performance optimisation",
+  //   "locked": true,
+  //   "caption": "",
+  //   "isProjectWip": false,
+  //   "poster": "/static/img/placeholders/air.jpg"
+  // },

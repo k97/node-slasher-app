@@ -22,9 +22,9 @@ class HomePage extends React.Component {
                 : `/work/${pageUrl}`;
     Router.push(route);
   }
-  
+
   render() {
-    
+
     return (
       <Layout title={"Projects - k97"}>
         <style global jsx>{`
@@ -45,8 +45,8 @@ class HomePage extends React.Component {
             {
               Object.keys(projectLinks).map(
                 key => (
-                  <div onClick={this.navigateToPost.bind(this, projectLinks[key].url)} key={key}>
-                    <WorkCard details={projectLinks[key]}  />
+                  <div className="ka-work-list-item" onClick={this.navigateToPost.bind(this, projectLinks[key].url)}  key={key}>
+                    <WorkCard details={projectLinks[key]} />
                   </div>
                  )
               )

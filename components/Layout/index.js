@@ -12,7 +12,7 @@ export default ({ children, title = 'K97 - Karthik webspace' }) => (
       <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.4/tachyons.min.css" />
-      <link rel="stylesheet" href="/static/css/main-min.css" />
+      <link rel="stylesheet" href="/static/css/main.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
       <link rel="stylesheet" href="/static/css/simplemde.css" />
 

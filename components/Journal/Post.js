@@ -1,8 +1,18 @@
 import React from 'react';
-import { formateDate } from '../../handlers/helpers';
 import ReactMarkdown from 'react-markdown';
 
+import { formateDate } from '../../handlers/helpers';
+
 class JournalPost extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // debugger
+  }
+
 
   render() {
     const journal = this.props.detail;
@@ -25,7 +35,7 @@ class JournalPost extends React.Component {
           </p>
         </div>
         <article className="markdown-body">
-          <div className="measure-wide fw4 measure db center f4 lh-copy black-60 ">
+          <div className="med-img-wrapper measure-wide fw4 measure db center f4 lh-copy black-60 ">
             <ReactMarkdown source={content} />
           </div>
         </article>

@@ -8,7 +8,7 @@ import ProjectTitle from '../../components/Work/ProjectTitle';
 import EditProject from '../../components/Work/EditProject';
 import UILoader from '../../components/Home/UILoader';
 
-class ResConnect extends React.Component {
+class SonyMusicApp extends React.Component {
 
   constructor(props) {
     super(props);
@@ -21,14 +21,12 @@ class ResConnect extends React.Component {
 
   componentDidMount() {
     this.fetchProjectDetail();
-
   }
 
   fetchProjectDetail() {
-    axios.get('/api/project/resconnect').then(response => {
+    axios.get('/api/project/sonymusicapp').then(response => {
       this.setState({ project: response.data, loading: false });
-      mediumZoom('.med-img-wrapper img',{ margin:100 })
-
+      mediumZoom('.med-img-wrapper img',{ margin: 70 })
     }).catch(error => {
       this.setState({ loading: false });
     });
@@ -38,21 +36,21 @@ class ResConnect extends React.Component {
   render() {
     const content = this.state.project.content;
     return (
-      <Layout title={`Project Connect - Karthik`}>
+      <Layout title={`Project Sony Music - Karthik`}>
         <style global jsx>{`
           .knav a:nth-child(4) {
             border: solid #5F91F5;
             border-width: 0 0 3px;
             color: #5F91F5;
           }
-          .bg-connect {
-            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+          .bg-sonymusic {
+            background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
           }
         `}
         </style>
         <div className='body-content'>
 
-          <ProjectTitle heading="Project Connect" date="March, 2016" bgColor="bg-connect" />
+          <ProjectTitle heading="SONY MUSIC" date="April, 2014" bgColor="bg-sonymusic" />
 
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
@@ -71,4 +69,4 @@ class ResConnect extends React.Component {
   }
 }
 
-export default ResConnect;
+export default SonyMusicApp

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import mediumZoom from 'medium-zoom';
 
 import Layout from '../components/Layout/index';
 import JournalPost from '../components/Journal/Post';
@@ -46,6 +47,7 @@ class JDetail extends React.Component {
         alertInfo.isVisible = true;
         if(response.status !== 200) this.state.alertInfo.type = 'error';
         this.setState({  alertInfo, loading: false });
+      mediumZoom('.med-img-wrapper img',{ margin:100 })
       }).catch(error => {
         this.setState({ loading: false });
       });
@@ -60,6 +62,7 @@ class JDetail extends React.Component {
         .then(response => {
           var journalDetail = response.data;
           this.setState({ journalDetail, loading: false });
+          mediumZoom('.med-img-wrapper img',{ margin: 70 })
         })
         .catch(error => {
           this.setState({ loading: false });
