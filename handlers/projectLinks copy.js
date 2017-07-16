@@ -18,6 +18,41 @@ exports.projectLinks = [
     "poster": "/static/img/placeholders/air.jpg"
   },
   {
+    "url": "game-of-life",
+    "title": "Game of Life",
+    "blurb": "A cellular automaton recreation using ES6",
+    "caption": "",
+    "locked": false,
+    "isProjectWip": false,
+    "poster": "/static/img/placeholders/gol.jpg"
+  },{
+    "url": "display-directions",
+    "title": "Display Directions",
+    "blurb": "<strong>Case-study</strong> to understand directions on devices contextually",
+    "caption": "",
+    "locked": false,
+    "isProjectWip": true,
+    "poster": "/static/img/placeholders/directions.jpg"
+  },
+  {
+    "url": "pilot-training-system",
+    "title": "Pilot Training",
+    "blurb": "Form builder framework to build dynamic form sets",
+    "caption": "",
+    "locked": true,
+    "isProjectWip": true,
+    "poster": "/static/img/placeholders/viewport.jpg"
+  },
+  {
+    "url": "javascript-30",
+    "title": "JavaScript 30",
+    "blurb": "30 day JS code challenge",
+    "locked": false,
+    "isProjectWip": true,
+    "caption": "Courtesy: <strong>Wes Bos</strong>",
+    "poster": "/static/img/placeholders/js30.jpg"
+  },
+  {
     "url": "crichq",
     "title": "CricHQ",
     "blurb": "Web & mobile application design and development",
@@ -45,15 +80,6 @@ exports.projectLinks = [
     "poster": "/static/img/placeholders/wonder.jpg"
   },
   {
-    "url": "display-directions",
-    "title": "Display Directions",
-    "blurb": "<strong>Case-study</strong> to understand directions on devices contextually",
-    "caption": "",
-    "locked": false,
-    "isProjectWip": true,
-    "poster": "/static/img/placeholders/directions.jpg"
-  },
-  {
     "url": "viewport-resizer",
     "title": "Viewport Resizer",
     "blurb": "A tool to test webpages on different resolutions",
@@ -63,16 +89,26 @@ exports.projectLinks = [
     "poster": "/static/img/placeholders/viewport.jpg"
   },
   {
-    "url": "fss",
-    "title": "Field Sales & Service",
-    "blurb": "A hybrid mobile app design and development",
+    "url": "mobile-accountant",
+    "title": "Mobile Accountant",
+    "blurb": "A mobile app that integrates with quickbooks for accounting",
     "caption": "",
-    "locked": true,
+    "locked": false,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/fss.jpg"
+    "poster": "/static/img/placeholders/sony.jpg"
   },
 ]
 
 
 // /static/img/placeholders/
 // /https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/
+
+  // {
+  //   "url": "project-ek",
+  //   "title": "Emirates.com",
+  //   "blurb": "Webpage construction and performance optimisation",
+  //   "locked": true,
+  //   "caption": "",
+  //   "isProjectWip": false,
+  //   "poster": "/static/img/placeholders/air.jpg"
+  // },
