@@ -7,8 +7,8 @@ class HomePage extends React.Component {
 
   heroText() {
     return (
-      <section className="pv7 ph5-ns hero--txt ft-head">
-        <h1 className="b f3 f2-ns black-70 mb0 pb0 kmain">
+      <section className="ph5-ns hero--txt ft-head">
+        <h1 className="b f3 f2-ns black-70 mv0 pb0 kmain">
           Karthikeyan Rajendran
         </h1>
 
@@ -16,10 +16,12 @@ class HomePage extends React.Component {
           User Interface Developer
         </p>
 
-        <a className="ka-hero-link" target="_blank" href="https://bit.ly/k97resume">
+        <Link href='/resume'>
+        <a className="ka-hero-link mw8-l">
           <span>Check out my resume</span>
           <i className="ion-ios-arrow-thin-right"></i>
         </a>
+        </Link>
 
         <div className="ka-icon-set">
           <a href="https://github.com/k97" target="_blank" className="github">
@@ -72,33 +74,35 @@ class HomePage extends React.Component {
               bottom: 0;
               box-shadow: 0px -12px 25px 0px rgba(0, 0, 0, 0.09);
             }
-
             .klogo {
               display: none;
             }
-
             .knav {
               text-align: center;
             }
-
             .knav a {
               margin: 0px 5%;
             }
-
             .kfooter {
               display: none;
             }
           `}
         </style>
 
-        <section className="cf ">
-          <div className="fl w-100 w-100-m w-50-l w-100-ns">
-            {this.heroText()}
+        <section className="vh-100 dt w-100 relative top--2">
+          <div className="dtc v-mid">
+            <section className="cf ">
+              <div className="fl w-100 w-100-m w-50-l w-100-ns">
+                {this.heroText()}
+              </div>
+
+              <div className="fl w-50 dn-m hero-img-container">
+                {this.heroComponent()}
+              </div>
+            </section>
+
           </div>
 
-          <div className="fl w-50 dn-m hero-img-container">
-            {this.heroComponent()}
-          </div>
         </section>
       </Layout>
     );
