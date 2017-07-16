@@ -9,6 +9,14 @@ class ProjectTitle extends React.Component {
   render() {
     return (
       <header className={`ft-head ${this.props.bgColor}`}>
+        <style global jsx>{`
+          .knav a:nth-child(4) {
+            border: solid #5F91F5;
+            border-width: 0 0 3px;
+            color: #5F91F5;
+          }
+        `}
+        </style>
         <div className="mw9 center pa4 pt5-ns ph7-l pt6 pv5 tc">
           <h3 className="f2 f1-m f-headline-l measure-wide lh-title mt3 mb2">
             <span className="bg-black-80 lh-copy white pv1 ph3 tracked-tight">

@@ -15,7 +15,7 @@ class WorkCard extends React.Component {
     const isWip = () => {
       return (
         <span className="f7 fw6 absolute br1 ba ph2 pv1 tracked black-50 b--black-40 z-4 mt3 ml3">
-          WIP
+          Draft
         </span>
       );
     };
