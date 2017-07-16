@@ -9,7 +9,9 @@ exports.setProjectPage = (id) => {
     'display-directions': 'display-directions',
     'sony-music-app': 'sony-music-app',
     'viewport-resizer': 'viewport-resizer',
-    'crichq': 'crichq'
+    'crichq': 'crichq',
+    'wonder': 'wonder',
+    'fss': 'fss'
   };
   return projects[id];
 }

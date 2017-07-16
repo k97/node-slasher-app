@@ -33,6 +33,9 @@ class HomePage extends React.Component {
             border-width: 0 0 3px;
             color: #5F91F5;
           }
+          .ka-work-list-item {
+            cursor: pointer!important;
+          }
           `}
         </style>
         <div className="body-content pt4 pb2 ph5 f4">
@@ -45,7 +48,7 @@ class HomePage extends React.Component {
             {
               Object.keys(projectLinks).map(
                 key => (
-                  <div className="ka-work-list-item" onClick={this.navigateToPost.bind(this, projectLinks[key].url)}  key={key}>
+                  <div className="ka-work-list-item " onClick={this.navigateToPost.bind(this, projectLinks[key].url)}  key={key}>
                     <WorkCard details={projectLinks[key]} />
                   </div>
                  )
