@@ -62,7 +62,7 @@ class JDetail extends React.Component {
         .then(response => {
           var journalDetail = response.data;
           this.setState({ journalDetail, loading: false });
-          mediumZoom('.med-img-wrapper img',{ margin: 70 })
+          mediumZoom('.journal-wrapper img',{ margin: 70 })
         })
         .catch(error => {
           this.setState({ loading: false });

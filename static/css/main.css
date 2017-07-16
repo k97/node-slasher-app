@@ -411,10 +411,6 @@ select {
   vertical-align: middle;
 }
 
-.admin-section {
-    display: none!important
-}
-
 .ka-loader {
   text-align: center;
   margin: 50px;
@@ -505,14 +501,19 @@ background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%
    background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
   background:url('https://s3-ap-southeast-2.amazonaws.com/k97static/project-snaps/ddir-1-hud-blur.jpg') no-repeat center;
 }
-.work-detail-wrapper {
+
+.work-detail-wrapper, .journal-wrapper {
   margin-top: 1.5em;
 }
-.work-detail-wrapper h2, .work-detail-wrapper h3, .work-detail-wrapper h4, .work-detail-wrapper h5 {
+.work-detail-wrapper h2, .work-detail-wrapper h3, .work-detail-wrapper h4, .work-detail-wrapper h5,
+.journal-wrapper h2, .journal-wrapper h3, .journal-wrapper h4, .journal-wrapper h5 {
   margin-bottom: 0.025em;
   padding-bottom:0;
 }
-.work-detail-wrapper p {
+.work-detail-wrapper p, .journal-wrapper p {
   margin-top: 0;
   padding-top:0;
+}
+.admin-section {
+  display: none!important
 }

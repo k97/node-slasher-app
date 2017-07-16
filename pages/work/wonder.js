@@ -39,7 +39,7 @@ class CricHQ extends React.Component {
       <Layout title={`Project CricHQ - Karthik`}>
         <div className='body-content'>
 
-          <ProjectTitle heading="Wonder Cements App" date="September, 2013" bgColor="bg-wonder" />
+          <ProjectTitle heading="Wonder App" date="September, 2013" bgColor="bg-wonder" />
 
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>

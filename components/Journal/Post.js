@@ -35,7 +35,7 @@ class JournalPost extends React.Component {
           </p>
         </div>
         <article className="markdown-body">
-          <div className="med-img-wrapper measure-wide fw4 measure db center f4 lh-copy black-60 ">
+          <div className="journal-wrapper measure-wide fw4 measure db center f4 lh-copy black-60 ">
             <ReactMarkdown source={content} />
           </div>
         </article>
