@@ -9,11 +9,11 @@ class Resume extends React.Component {
   skillsPartials(skill){
     return (
       <div className="bg-white pv3 ph3 mb3 mr3">
-        <strong className="db b f5 black-70 tracked ttu ft-head mt1 mb3">{skill.name}</strong>
+        <strong className="db b f5 black-60 tracked ttu ft-head mt1 mb3">{skill.name}</strong>
         {
           Object.keys(skill.keywords).map(
             key => (
-              <span className="f6 br-pill ba ph3 pv2 dib black-50 b--black-40 mr2 mb3" key={key}>
+              <span className="f6 br-pill ba ph3 pv2 dib black-60 b--black-40 mr2 mb3" key={key}>
                 {skill.keywords[key]}
               </span>
             )
@@ -28,7 +28,7 @@ class Resume extends React.Component {
   educationPartial(edu){
     return (
       <div className="bg-white pv3 ph3 mb3 mr3">
-        <strong className="db b f5 black-70 tracked ttu ft-head mt1 mb1">{edu.studyType} in {edu.area}</strong>
+        <strong className="db b f5 black-60 tracked ttu ft-head mt1 mb1">{edu.studyType} in {edu.area}</strong>
 
         <span className="db f5 black-60 tracked ttu mb1">{edu.institution}</span>
         <span className="db f5 black-60 tracked mb1">{edu.college}</span>
@@ -50,8 +50,8 @@ class Resume extends React.Component {
     return (
       <div className="bg-white pv3 ph3 mb3 mr3 br1 cf">
         <section className="fl w-70-l w-100-ns w-70-m pt0-ns pt2-m pt3-l">
-          <strong className="db b f5 black-70 tracked ttu ft-head mt1 mb1">{work.company}</strong>
-          <span className="db f5 black-70 tracked ttu">{work.position}</span>
+          <strong className="db b f5 black-60 tracked ttu ft-head mt1 mb1">{work.company}</strong>
+          <span className="db f5 black-60 tracked ttu">{work.position}</span>
           <span className="f5 black-50">
             {formateDate(work.startDate)}
             &nbsp;-&nbsp;
@@ -83,8 +83,8 @@ class Resume extends React.Component {
 
               <div className="cf mt4">
                 <section className="fl w-100-m w-100-ns w-70-l">
-                  <h1 className="f3 f2-m f2-l black-80 mv0 pt0 pb2 lh-title">{cvObj.basics.name}</h1>
-                  <h2 className="f4 f3-m f3-l black-70 fw4 mv0 pv0">{cvObj.basics.label}</h2>
+                  <h1 className="f3 f2-m f2-l black-70 mv0 pt0 pb2 lh-title">{cvObj.basics.name}</h1>
+                  <h2 className="f4 f3-m f3-l black-60 fw4 mv0 pv0">{cvObj.basics.label}</h2>
                 </section>
                 <section className="fl w-100-m w-100-ns w-30-l">
                     <a
