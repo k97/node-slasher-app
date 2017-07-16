@@ -8,7 +8,7 @@ import ProjectTitle from '../../components/Work/ProjectTitle';
 import EditProject from '../../components/Work/EditProject';
 import UILoader from '../../components/Home/UILoader';
 
-class ProjectAir extends React.Component {
+class CricHQ extends React.Component {
 
   constructor(props) {
     super(props);
@@ -24,7 +24,7 @@ class ProjectAir extends React.Component {
   }
 
   fetchProjectDetail() {
-    axios.get('/api/project/air').then(response => {
+    axios.get('/api/project/wonder').then(response => {
       this.setState({ project: response.data, loading: false });
       mediumZoom('.work-detail-wrapper img',{ margin: 70 })
     }).catch(error => {
@@ -36,10 +36,10 @@ class ProjectAir extends React.Component {
   render() {
     const content = this.state.project.content;
     return (
-      <Layout title={`Airport Info Repo - Karthik`}>
+      <Layout title={`Project CricHQ - Karthik`}>
         <div className='body-content'>
 
-          <ProjectTitle heading="Airport Info Repo" date="September, 2016" bgColor="bg-air" />
+          <ProjectTitle heading="Wonder Cements App" date="September, 2013" bgColor="bg-wonder" />
 
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
@@ -58,4 +58,4 @@ class ProjectAir extends React.Component {
   }
 }
 
-export default ProjectAir
+export default CricHQ;

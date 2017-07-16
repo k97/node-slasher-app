@@ -18,20 +18,9 @@ class ViewPortRezier extends React.Component {
   render() {
     return (
       <Layout title={`Viewport Resizer - Karthik`}>
-        <style global jsx>{`
-          .knav a:nth-child(4) {
-            border: solid #5F91F5;
-            border-width: 0 0 3px;
-            color: #5F91F5;
-          }
-          .bg-vpr {
-            background-image: linear-gradient(to right, #e2902d 0%, #fa5b5d 100%);
-          }
-        `}
-        </style>
         <div className='body-content'>
 
-          <ProjectTitle heading="Viewport Resizer" date="JUNE, 2014" bgColor="bg-vpr" />
+          <ProjectTitle heading="Viewport Resizer" date="June, 2014" bgColor="bg-vpr" />
 
           <section className='w-100 ph2 ph3-m ph4-l'>
             <div className='cf pa2'>
