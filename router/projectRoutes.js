@@ -11,7 +11,8 @@ exports.setProjectPage = (id) => {
     'viewport-resizer': 'viewport-resizer',
     'crichq': 'crichq',
     'wonder': 'wonder',
-    'fss': 'fss'
+    'fss': 'fss',
+    'grading-system': 'grading-system'
   };
   return projects[id];
 }
