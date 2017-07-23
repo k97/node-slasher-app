@@ -3,7 +3,6 @@ import Layout from "../components/Layout/index";
 import { cvObj } from "../handlers/resumeSrc";
 import { formateDate } from '../handlers/helpers';
 
-
 class Resume extends React.Component {
 
   skillsPartials(skill){
@@ -21,9 +20,7 @@ class Resume extends React.Component {
         }
       </div>
     );
-
   }
-
 
   educationPartial(edu){
     return (
@@ -88,7 +85,7 @@ class Resume extends React.Component {
                 </section>
                 <section className="fl w-100-m w-100-ns w-30-l">
                     <a
-                      href="https://drive.google.com/file/d/0BzLAIi367ff9Q1FUMGpzS1RsTUE/view?usp=sharing"
+                      href="https://drive.google.com/file/d/0BzLAIi367ff9cjJJcFFxUXpPR00/view?usp=sharing"
                       target="_blank"
                       className=" mt3 fr-l mr4-l mb1 f5 no-underline blue bg-animate hover-bg-blue hover-white inline-flex items-center br2 pv2 ph4 ba border-box pointer">
                       <span className="ft-head dib">Download PDF</span>

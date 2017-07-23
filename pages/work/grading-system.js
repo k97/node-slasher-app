@@ -24,7 +24,7 @@ class GradingSystem extends React.Component {
   }
 
   fetchProjectDetail() {
-    axios.get('/api/project/air').then(response => {
+    axios.get('/api/project/grading-system').then(response => {
       this.setState({ project: response.data, loading: false });
       mediumZoom('.work-detail-wrapper img',{ margin: 70 })
     }).catch(error => {
