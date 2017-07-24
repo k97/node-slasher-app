@@ -3,8 +3,10 @@
  */
 exports.login = (req, res, next) => {
   var message = 'Please enter the correct passphrase';
+  const possibleCodes = process.env.SECRET.split(' ');
+  let userPass = req.body.passphrase.trim().toLowerCase();
   req.session.authenticated = false;
-  if (req.body.passphrase && req.body.passphrase.trim().toLowerCase() === process.env.SECRET) {
+  if (userPass && possibleCodes.indexOf(userPass) > -1) {
     req.session.authenticated = true;
     message = 'Passphrase has been verified successfuly!';
     next();

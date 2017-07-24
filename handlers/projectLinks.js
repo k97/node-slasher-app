@@ -6,7 +6,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/rescon.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/rescon.jpg"
   },
   {
     "url": "grading-system",
@@ -15,7 +15,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/etags.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/etags.jpg"
   },
   {
     "url": "wonder",
@@ -24,7 +24,7 @@ exports.projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/wonder.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/wonder.jpg"
   },
   {
     "url": "crichq",
@@ -33,7 +33,7 @@ exports.projectLinks = [
     "locked": false,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/crichq.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/crichq.jpg"
   },
   {
     "url": "air",
@@ -42,7 +42,7 @@ exports.projectLinks = [
     "locked": true,
     "caption": "",
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/air.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/air.jpg"
   },
   {
     "url": "sony-music-app",
@@ -51,7 +51,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/sony.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/sony.jpg"
   },
   {
     "url": "display-directions",
@@ -60,7 +60,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": true,
-    "poster": "/static/img/placeholders/directions.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/directions.jpg"
   },
   {
     "url": "fss",
@@ -69,7 +69,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": true,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/fss.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/fss.jpg"
   },
   {
     "url": "viewport-resizer",
@@ -78,10 +78,7 @@ exports.projectLinks = [
     "caption": "",
     "locked": false,
     "isProjectWip": false,
-    "poster": "/static/img/placeholders/viewport.jpg"
+    "poster": "https://s3-ap-southeast-2.amazonaws.com/k97static/proj-placeholder/viewport.jpg"
   }
 ]
 
-
-// /static/img/placeholders/
-// /
