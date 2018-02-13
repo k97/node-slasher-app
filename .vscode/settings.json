@@ -4,7 +4,7 @@
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Material Theme Palenight",
   "editor.fontFamily": "'Fira Code', 'Roboto Mono', Monaco, 'Courier New', monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.lineHeight": 24,
   "editor.fontWeight": "400",
   "workbench.iconTheme": "vs-seti",
