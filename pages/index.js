@@ -9,11 +9,11 @@ class HomePage extends React.Component {
     return (
       <section className="ph5-ns hero--txt ft-head">
         <h1 className="b f3 f2-ns black-70 mv0 pb0 kmain">
-          Karthikeyan Rajendran
+          Karthik Rajendran
         </h1>
 
         <p className="f5 db fw5 ttu black-40 tracked ft-serif mt2 mb2 p0">
-          User Interface Developer
+          Product Designer &amp; Developer
         </p>
 
         <Link href='/resume'>
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <Layout title={"Karthikeyan Rajendran"}>
+      <Layout title={"Karthik Rajendran - Product Designer & Developer"}>
         <style global jsx>{`
             .knav a:nth-child(1) {
               padding: 1.72em 0 1.75em;

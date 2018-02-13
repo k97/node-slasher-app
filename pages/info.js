@@ -53,7 +53,7 @@ class Info extends React.Component {
 
       `}
           </style>
-          <div className="body-content ph5 pv2 f4 ">
+          <div className="body-content ph3 ph5-ns pv2 f4 ">
             <article className="ph3 ph5-ns">
               <h1 className="f3 f2-m f1-l black-70">Build Info</h1>
               <div className="measure-wide lh-copy ft-serif black-70">
