@@ -20,9 +20,7 @@ require('dotenv').config({ path: 'variables.env' });
 
 mongoose.connect(process.env.DATABASE, {
   useMongoClient: true,
-  server: {
-    reconnectTries: Number.MAX_VALUE
-  }
+  reconnectTries: Number.MAX_VALUE
 });
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 

@@ -20,7 +20,7 @@ export default () => (
           <p>I am Karthikeyan Rajendran and I like to think myself as part designer and a part coder. I have been tinkering with web ever since I started using it and I spend most of my time on designing and building digital products.
           </p>
           <p>
-            Right now, I'm working for FastTrack in Melbourne, designing and building digital products that helps recruitment businesses <del>surviving the scorching heat of Dubai, while pushing code that keeps the Emirates aircrafts aflight</del>. I share my prespectives on things that are interesting <a href="/journal">here</a> and if you are looking for my <a href="/resume">resume</a>, it's here.
+            Right now, I'm working for FastTrack in Melbourne, designing and building digital products that helps recruitment businesses <del>surviving the scorching heat of Dubai, while pushing code that keeps the Emirates aircrafts aflight</del>. I share my prespectives on things that are interesting <a href="/journal">here</a> and if you are looking for my resume, <a href="/resume">it's here</a>.
           </p>
         </div>
       </article>

@@ -9,11 +9,11 @@ class HomePage extends React.Component {
     return (
       <section className="ph5-ns hero--txt ft-head">
         <h1 className="b f3 f2-ns black-70 mv0 pb0 kmain">
-          Karthik Rajendran
+          Hello! I'm Karthik,
         </h1>
 
-        <p className="f5 db fw5 ttu black-40 tracked ft-serif mt2 mb2 p0">
-          Product Designer &amp; Developer
+        <p className="f5 db fw5 black-40 tracked ft-serif mt2 mb2 p0">
+          Product Designer living in Melbourne, Australia.
         </p>
 
         <Link href='/resume'>
@@ -28,7 +28,7 @@ class HomePage extends React.Component {
             <i className="ion-social-github-outline"></i>
           </a>
 
-          <a href="https://twitter.com/k97ind" target="_blank" className="twitter">
+          <a href="https://twitter.com/k97co" target="_blank" className="twitter">
             <i className="ion-social-twitter-outline"></i>
           </a>
 

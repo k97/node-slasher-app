@@ -24,7 +24,6 @@ class Resume extends React.Component {
 
   }
 
-
   educationPartial(edu){
     return (
       <div className="bg-white pv3 ph3 mb3 mr3">
@@ -88,31 +87,15 @@ class Resume extends React.Component {
                 </section>
                 <section className="fl w-100-m w-100-ns w-30-l">
                     <a
-                      href="https://drive.google.com/file/d/0BzLAIi367ff9Q1FUMGpzS1RsTUE/view?usp=sharing"
-                      target="_blank"
-                      className=" mt3 fr-l mr4-l mb1 f5 no-underline blue bg-animate hover-bg-blue hover-white inline-flex items-center br2 pv2 ph4 ba border-box pointer">
-                      <span className="ft-head dib">Download PDF</span>
+                      href="https://drive.google.com/uc?authuser=0&id=0BzLAIi367ff9Q1FUMGpzS1RsTUE&export=download"
+                      download
+                      className="dib mt3 fr-l mr4-l mb1 f6 no-underline blue bg-animate hover-bg-blue hover-white inline-flex items-center br2 pv1 ph3 ba border-box pointer">
+                      <span className="ft-head dib"><i className="ion-android-download dib v-mid f4 mr2"></i> Download PDF</span>
                     </a>
                 </section>
               </div>
 
-              <p className="f4 black-60 lh-copy mt1 pt1">{cvObj.basics.summary}</p>
-
-              <div className="db mb1 pb1 black-70">
-                <i className="ion-university dib f3 mr2"></i>
-                <span className="f3 fw7 ft-head">Education</span>
-              </div>
-              <ul className="list mh0 ph0 cf mt0 pt0">
-                 {
-                    Object.keys(cvObj.education).map(
-                      key => (
-                        <li className="fl w-100 w-100-m w-50-l db" key={key}>
-                          {this.educationPartial(cvObj.education[key])}
-                        </li>
-                      )
-                    )
-                  }
-              </ul>
+              <p className="f4 black-60 lh-copy mt2 pt1">{cvObj.basics.summary}</p>
 
               <div className="db mb1 pb1 black-70">
                 <i className="ion-ios-briefcase dib f3 mr2 "></i>
@@ -124,6 +107,22 @@ class Resume extends React.Component {
                       key => (
                         <li className="fl w-100 w-100-m w-50-l db" key={key}>
                           {this.expPartial(cvObj.work[key])}
+                        </li>
+                      )
+                    )
+                  }
+              </ul>
+
+              <div className="db mb1 pb1 black-70">
+                <i className="ion-university dib f3 mr2"></i>
+                <span className="f3 fw7 ft-head">Education</span>
+              </div>
+              <ul className="list mh0 ph0 cf mt0 pt0">
+                 {
+                    Object.keys(cvObj.education).map(
+                      key => (
+                        <li className="fl w-100 w-100-m w-50-l db" key={key}>
+                          {this.educationPartial(cvObj.education[key])}
                         </li>
                       )
                     )

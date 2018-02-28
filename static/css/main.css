@@ -357,9 +357,9 @@ select {
 
 .ka-hero-link {
   display: inline-block;
-  width: 90%;
+  width: 75%;
   background: #fff;
-  padding: 1.1em 3.0em 1.0em 2.0em;
+  padding: 0.6em 3.0em 0.5em 2.0em;
   margin: 0.4em 0 0.6em -2px;
   -webkit-transform: skew(20deg);
       -ms-transform: skew(20deg);

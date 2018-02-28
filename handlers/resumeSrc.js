@@ -2,12 +2,12 @@ exports.cvObj = {
   "version": 1,
   "basics": {
     "name": "Karthikeyan Rajendran",
-    "label": "User Interface Developer",
+    "label": "Product Designer & Developer",
     "picture": "",
     "email": "k97@outlook.in",
-    "phone": "(971) 5515 32491",
+    "phone": "(61) 481 730 240",
     "degree": "Bachelors in Information Technology",
-    "website": "http://www.k97.in",
+    "website": "http://www.k97.co",
     "summary": "I'm currently focused on building digital products, I specialise in user interface design and development. I enjoy crafting simple solutions to solve complex problems and constantly look out to learn new technologies to build products efficiently.",
     "highlights": null,
     "location": {
@@ -21,7 +21,7 @@ exports.cvObj = {
       {
         "network": "twitter",
         "username": "k97ind",
-        "url": "https://twitter.com/k97ind"
+        "url": "https://twitter.com/k97co"
       },
       {
         "network": "github",
@@ -37,12 +37,20 @@ exports.cvObj = {
   },
   "work": [
     {
+      "company": "FastTrack Cloud Services",
+      "logo": "https://s3-ap-southeast-2.amazonaws.com/k97static/misc/fasttrack.png",
+      "position": "Product Designer",
+      "website": "https://fasttrack.com.au/",
+      "startDate": "2017-08-11",
+      "endDate": "Current",
+      "summary": "Part of an excellence team that designed, developed and implemented an enterprise-wide component library, resulting in a modular system, thus reducing product development time and costs drastically."
+    },{
       "company": "Emirates Airlines",
       "logo": "https://s3-ap-southeast-2.amazonaws.com/k97static/misc/ek.png",
       "position": "UI/UX Engineer",
       "website": "https://www.emirates.com",
       "startDate": "2015-03-15",
-      "endDate": "Current",
+      "endDate": "2017-07-31",
       "summary": "Part of an excellence team that designed, developed and implemented an enterprise-wide component library, resulting in a modular system, thus reducing product development time and costs drastically."
     },
     {
@@ -114,10 +122,9 @@ exports.cvObj = {
       "level": "Intermediate",
       "keywords": [
         "Figma",
-        "Illustrator",
         "Photoshop",
-        "Sketch",
-        "Invision"
+        "Illustrator",
+        "Sketch"
       ]
     },
     {
@@ -150,6 +157,7 @@ exports.cvObj = {
       "level": "Expert",
       "keywords": [
         "Ionic",
+        "React Native",
         "Bootstrap",
         "iOS HIG",
         "Google Material Design"
