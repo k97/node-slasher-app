@@ -17,8 +17,7 @@ export default () => (
       <article className="pv4 ph3 ph5-ns">
         <h1 className="f3 f2-m f1-l">About</h1>
         <div className="measure lh-copy ft-serif black-70">
-          <p>I am Karthikeyan Rajendran and I like to think myself as part designer and a part coder. I have been tinkering with web ever since I started using it and I spend most of my time on designing and building digital products.
-          </p>
+          <p>I am Karthikeyan Rajendran and I like to think myself as part designer and a part coder. I have been tinkering with web ever since I started using it and I enjoy spending my time on designing and building products, both physical & digital.</p>
           <p>
             Right now, I'm working for FastTrack in Melbourne, designing and building digital products that helps recruitment businesses <del>surviving the scorching heat of Dubai, while pushing code that keeps the Emirates aircrafts aflight</del>. I share my prespectives on things that are interesting <a href="/journal">here</a> and if you are looking for my resume, <a href="/resume">it's here</a>.
           </p>

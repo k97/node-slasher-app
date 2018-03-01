@@ -1,7 +1,10 @@
 # Node Slasher App
 
-
-#DO build
+#DO Deployments commands:
 ```
-NODE_ENV=production forever start server.js
+  forever stopall
+  npm install
+  npm run build
+  NODE_ENV=production forever start server.js
+
 ```
