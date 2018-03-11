@@ -21,15 +21,15 @@ class WorkCard extends React.Component {
     };
 
     return (
-      <section className="pt1 bg-white br2 ba b--black-10">
-        <div className="pb1 ph3">
+      <section>
+        <div className="pa1 ph3">
           <h1 className="dib f6 ttu tracked black-70">
-            {cModel.title}
+            { cModel.title }
           </h1>
-          {cModel.locked ? this.templateLock() : ""}
+          { cModel.locked ? this.templateLock() : "" }
         </div>
-        {cModel.isProjectWip ? isWip() : ""}
-        <img src={cModel.poster} className="w-100 db" alt={cModel.title} />
+        { cModel.isProjectWip ? isWip() : "" }
+        <img src={cModel.poster} className="db w-100" alt={ cModel.title } />
         <div className="pa3 ma0 ft-serif">
           <p
             className="db black-70 ma0 pa0"

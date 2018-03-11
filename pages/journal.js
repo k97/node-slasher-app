@@ -129,7 +129,7 @@ class JList extends React.Component {
         <div className="body-content">
           <JournalFilter filterPosts={this.filterPosts} />
           <section className="w-100 ph0-ns pa3-m pa3-l">
-            <div className="ka-list pa0-ns pa2">
+            <div className="ka-journal-list pa0-ns pa2">
               {(journalList.length > 0)
                 ? this.renderJournalCard(journalList)
                 : this.renderNoRecordsMsg()

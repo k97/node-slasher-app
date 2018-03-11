@@ -8,7 +8,7 @@ class JournalCard extends React.Component {
     const dateVal = formateDate(jModal.displayDate);
     return (
       <Link href={"/journalDetail?id=" + jModal.customUrlSlug} as={"/journal/" + jModal.customUrlSlug}>
-        <div className="ka-list-item bg-white br2 ph3 pt3 pb2 ba b--black-10">
+        <div className="ka-journal-list-item bg-white br2 ph3 pt3 pb2 ba b--black-10">
           <article className="center">
             <h1 className="fw6 f4 mt1 mb0 black-70">
               {jModal.title}

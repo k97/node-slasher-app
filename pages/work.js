@@ -48,7 +48,7 @@ class HomePage extends React.Component {
             {
               Object.keys(projectLinks).map(
                 key => (
-                  <div className="ka-work-list-item " onClick={this.navigateToPost.bind(this, projectLinks[key].url)}  key={key}>
+                  <div className="ka-work-list-item  bg-white br2 ba b--black-10" onClick={this.navigateToPost.bind(this, projectLinks[key].url)}  key={key}>
                     <WorkCard details={projectLinks[key]} />
                   </div>
                  )
