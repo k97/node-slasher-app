@@ -38,12 +38,12 @@ class HomePage extends React.Component {
           }
           `}
         </style>
-        <div className="body-content pt4 pb2 ph5 f4">
+        <div className="w-2k-center body-content pt4 pb2 ph5 f4">
           <h2 className="f3 f2-ns black-70 lh-solid ma0 pa0">Work</h2>
           <p className="f5 black-60 db lh-copy ft-serif">Projects, case-studies &amp; code-snippets</p>
         </div>
 
-        <section className="ph4 pb3">
+        <section className="w-2k-center ph4 pb3">
           <div className="ka-work-list lab-cards">
             {
               Object.keys(projectLinks).map(

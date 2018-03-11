@@ -10,7 +10,7 @@ class AddWork extends React.Component {
   render() {
     return (
       <Layout title={"Create New Project"}>
-        <div className="body-content">
+        <div className="w-2k-center body-content">
           <section className="w-100">
             <ProjectForm editMode={false} />
           </section>

@@ -72,17 +72,19 @@ class JournalAdd extends React.Component {
       <Layout title={"New Journal"}>
         <div className="body-content">
           <div className="ph4 bt bb b--black-10 f5 bg-white">
-            <a className={`link dib ph4 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showAdd ? "bb fw5" : ""}`}
-              onClick={this.toggleView.bind(this, "add")}>
-              Add
-            </a>
-            <a className={`link dib ph4 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showPreview ? "bb fw5" : ""}`}
-              onClick={this.toggleView.bind(this, "preview")}>
-              Preview
-            </a>
+            <div className="w-2k-center">
+              <a className={`link dib ph4 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showAdd ? "bb fw5" : ""}`}
+                onClick={this.toggleView.bind(this, "add")}>
+                Add
+              </a>
+              <a className={`link dib ph4 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showPreview ? "bb fw5" : ""}`}
+                onClick={this.toggleView.bind(this, "preview")}>
+                Preview
+              </a>
+            </div>
           </div>
 
-          <section className="w-100">
+          <section className="w-2k-center  w-100">
 
             {/*FORM VIEW*/}
             <div className="cf" className={this.state.displayFlags.showAdd ? "" : "dn"}>

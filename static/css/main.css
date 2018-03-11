@@ -33,11 +33,9 @@ h1, h2, h3, h4, h5, h6, .ft-head {
 .kheader {
     -webkit-box-shadow: 0 1px 1px #e1e1e1;
             box-shadow: 0 1px 1px #e1e1e1;
+            background: rgba(255, 255, 255, 0.96);
 }
 
-.kheader nav {
-  background: rgba(255, 255, 255, 0.96);
-}
 
 header {
   -webkit-transition: all 500ms;
@@ -508,4 +506,16 @@ background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%
 }
 .admin-section {
   display: none!important
+}
+
+.w-2k-head-center {
+  max-width: 2180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.w-2k-center {
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -15,7 +15,7 @@ class Header extends React.Component {
 render() {
   return (
     <header className="w-100 fixed top-0 kheader">
-      <nav className="db dt-l w-100 border-box ph5-l ttu tracked bb b--black-10 ft-head">
+      <nav className="w-2k-head-center db dt-l w-100 border-box ph5-l ttu tracked bb b--black-10 ft-head">
         <Link href='/'>
           <a className="klogo db dtc-l v-mid mid-gray link w-100 w-25-l tc tl-l m0 p0" title="Home">
             <img src="/static/img/k97-sticks-bw.png" className="dib w2 pt2" alt="K97 Logo" />

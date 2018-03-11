@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import Footer from '../Header/Footer'
 
 
-export default ({ children, title = 'K97 - Karthik webspace' }) => (
+export default ({ children, title = 'K97 - Karthik - Product Designer & Developer' }) => (
   <div>
     <Head>
       <title>{ title }</title>
@@ -16,9 +16,9 @@ export default ({ children, title = 'K97 - Karthik webspace' }) => (
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.4/tachyons.min.css" />
       <link rel="stylesheet" href="/static/css/main.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-      <link rel="stylesheet" href="/static/github-markdown.css" />
-      <link rel="stylesheet" href="/static/simplemde.css" />
-      <link rel="stylesheet" href="/static/nprogress.css" />
+      <link rel="stylesheet" href="/static/css/github-markdown-min.css" />
+      <link rel="stylesheet" href="/static/css/simplemde.css" />
+      <link rel="stylesheet" href="/static/css/nprogress-min.css" />
 
 
       {/* Production

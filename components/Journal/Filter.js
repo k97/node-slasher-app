@@ -60,8 +60,10 @@ class JournalFilter extends React.Component {
     return (
       <div className="bb b--black-20">
         <section className="pv4 ph5 black-90 bg--journal">
-          <div className="b f3 f2-ns black-90 lh-solid journal--header ft-head">Recordings</div>
-          <p className="f5 fw4 db ttu lh-solid journal--subtitle yellow-txt ft-serif">about design and TECH</p>
+          <div className="w-2k-center">
+            <div className="b f3 f2-ns black-90 lh-solid journal--header ft-head">Recordings</div>
+            <p className="f5 fw4 db ttu lh-solid journal--subtitle yellow-txt ft-serif">about design and TECH</p>
+          </div>
         </section>
         {/*          <div className="ph4  f5 bg-white">
             <a className={`link dib ph3 pv3 b--black-50 black-60 bw1 ${this.state.displayFlags.showAll ? "bb fw5" : ""}`} onClick={this.selectFilter.bind(this, "")}>All</a>

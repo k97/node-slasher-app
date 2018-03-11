@@ -89,7 +89,7 @@ class HomePage extends React.Component {
           `}
         </style>
 
-        <section className="vh-100 dt w-100 relative top--2">
+        <section className="w-2k-center vh-100 dt w-100 relative top--2">
           <div className="dtc v-mid">
             <section className="cf ">
               <div className="fl w-100 w-100-m w-50-l w-100-ns">
