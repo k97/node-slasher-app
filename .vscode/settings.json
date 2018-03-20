@@ -7,7 +7,7 @@
   "editor.fontSize": 13,
   "editor.lineHeight": 24,
   "editor.fontWeight": "400",
-  "workbench.iconTheme": "vs-seti",
+  "workbench.iconTheme": "material-icon-theme",
   "editor.wordWrap": "on",
   "files.exclude":{
     "**/.git": true,

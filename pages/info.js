@@ -49,13 +49,9 @@ class Info extends React.Component {
     return (
       (
         <Layout title={"Build Information - Karthik"}>
-          <style global jsx>{`
-
-      `}
-          </style>
-          <div className="body-content ph3 ph5-ns pv2 f4 ">
+          <div className="body-content pt1 ph3 ph5-ns pv2 f4 ">
             <article className="w-2k-center ph3 ph5-ns">
-              <h1 className="f3 f2-m f1-l black-70">Build Info</h1>
+              <h1 className="f3 f2-m f1-l black-60">Build Info</h1>
               <div className="measure-wide lh-copy ft-serif black-70">
                 <p>The current build on this site is an experiment to scratch my own itch on isomorphic rendering. To achieve that I have used React, NextJS for app scaffolding and NodeJS as the backend render engine, while the data comes from the MongoDB wonder world.
                 </p>

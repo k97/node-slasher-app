@@ -77,7 +77,7 @@ class Resume extends React.Component {
 
           `}
           </style>
-          <div className="body-content f4">
+          <div className="w-2k-center body-content f4">
             <article className="ph3 ph3-ns ph4-m ph6-l pv2 ">
 
               <div className="cf mt4">

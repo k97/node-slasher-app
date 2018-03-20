@@ -15,7 +15,7 @@ export default () => (
     </style>
     <div className="body-content pt1 ph3 ph5-ns f4 black-90 ">
       <article className="w-2k-center pv4 ph3 ph5-ns">
-        <h1 className="f3 f2-m f1-l">About</h1>
+        <h1 className="f3 f2-m f1-l black-60">About</h1>
         <div className="measure lh-copy ft-serif black-70">
           <p>I am Karthikeyan Rajendran and I like to think myself as part designer and a part coder. I have been tinkering with web ever since I started using it and I enjoy spending my time on designing and building products, both physical & digital.</p>
           <p>

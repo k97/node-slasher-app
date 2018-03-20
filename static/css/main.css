@@ -36,6 +36,12 @@ h1, h2, h3, h4, h5, h6, .ft-head {
             background: rgba(255, 255, 255, 0.96);
 }
 
+.klogo img{
+  display: inline-block;
+  max-width: 3.25rem;
+  margin-top: 0.46rem;
+  opacity: 0.97;
+}
 
 header {
   -webkit-transition: all 500ms;
@@ -68,6 +74,8 @@ header {
 
 .knav a{
   padding: 1.75em 0 1.64em;
+  border: solid #fff;
+  border-width: 0 0 3px;
 }
 
 @media(max-width: 479px) {
@@ -262,12 +270,17 @@ select {
   z-index: 2;
   min-height: 13rem;
   border-radius: 50%;
-  padding: 4rem;
   text-align: center;
   background: #fff;
-  border-radius: #cfcfcf;
   -webkit-box-shadow: 0 0 50px -1px #cfcfcf;
           box-shadow: 0 0 50px -1px #cfcfcf;
+}
+
+.hero-img .hero-content .hero-img-wrapper img {
+  display: inline-block;
+  margin-top: 1.85rem;
+  padding: 3.25rem;
+  opacity: 0.95;
 }
 
 .hero-img .hero-content .hero-bg-circle {
@@ -383,10 +396,10 @@ select {
       -ms-transform: skew(-20deg);
           transform: skew(-20deg);
   vertical-align: text-bottom;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.99em;
   width: 90%;
-  opacity: 0.6;
+  opacity: 0.5;
   text-align: left;
 }
 

@@ -12,7 +12,7 @@ class HomePage extends React.Component {
           Hello! I'm Karthik,
         </h1>
 
-        <p className="f5 db fw5 black-40 tracked ft-serif mt2 mb2 p0">
+        <p className="f5 db fw5 black-50 tracked ft-serif mt2 mb2 p0">
           Product Designer living in Melbourne, Australia.
         </p>
 
@@ -50,7 +50,7 @@ class HomePage extends React.Component {
     return (
       <div className="hero-img">
         <div className="hero-content">
-          <span className="hero-img-wrapper"><img src="../static/img/k97-sticks-bw.png" /></span>
+          <span className="hero-img-wrapper"><img src="../static/img/k97-retro.png" /></span>
           <span className="hero-img-wrapper hero-bg-circle hero-bg-circle-one"></span>
           <span className="hero-img-wrapper hero-bg-circle hero-bg-circle-two"></span>
         </div>
@@ -62,6 +62,11 @@ class HomePage extends React.Component {
     return (
       <Layout title={"Karthik Rajendran - Product Designer & Developer"}>
         <style global jsx>{`
+            .blue-index-bg {
+              background-image: -webkit-linear-gradient(136deg, #e7f2ff 42%, #eefaff 63%);
+              background-image: -o-linear-gradient(136deg, #e7f2ff 42%, #eefaff 63%);
+              background-image: linear-gradient(-46deg, #e7f2ff 42%, #eefaff 63%);
+            }
             .knav a:nth-child(1) {
               padding: 1.72em 0 1.75em;
               border: solid #5F91F5;
@@ -89,20 +94,21 @@ class HomePage extends React.Component {
           `}
         </style>
 
-        <section className="w-2k-center vh-100 dt w-100 relative top--2">
-          <div className="dtc v-mid">
-            <section className="cf ">
-              <div className="fl w-100 w-100-m w-50-l w-100-ns">
-                {this.heroText()}
+        <section className="blue-index-bg">
+            <div className="w-2k-center vh-100 dt w-100 relative top--2">
+              <div className="dtc v-mid">
+                <section className="cf ">
+                  <div className="fl w-100 w-100-m w-50-l w-100-ns">
+                    {this.heroText()}
+                  </div>
+
+                  <div className="fl w-50 dn-m hero-img-container">
+                    {this.heroComponent()}
+                  </div>
+                </section>
+
               </div>
-
-              <div className="fl w-50 dn-m hero-img-container">
-                {this.heroComponent()}
-              </div>
-            </section>
-
-          </div>
-
+            </div>
         </section>
       </Layout>
     );
