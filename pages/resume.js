@@ -87,7 +87,7 @@ class Resume extends React.Component {
                 </section>
                 <section className="fl w-100-m w-100-ns w-30-l">
                     <a
-                      href="https://drive.google.com/uc?authuser=0&id=0BzLAIi367ff9Q1FUMGpzS1RsTUE&export=download"
+                      href="https://drive.google.com/uc?authuser=0&id=1fOkRKx3C4eGm-B_GYTrsivhu1e1doIwU&export=download"
                       download
                       className="dib mt3 fr-l mr4-l mb1 f6 no-underline blue bg-animate hover-bg-blue hover-white inline-flex items-center br2 pv1 ph3 ba border-box pointer">
                       <span className="ft-head dib"><i className="ion-android-download dib v-mid f4 mr2"></i> Download PDF</span>

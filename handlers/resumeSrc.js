@@ -1,7 +1,7 @@
 exports.cvObj = {
   "version": 1,
   "basics": {
-    "name": "Karthikeyan Rajendran",
+    "name": "Karthik Rajendran",
     "label": "Product Designer & Developer",
     "picture": "",
     "email": "k97@outlook.in",
