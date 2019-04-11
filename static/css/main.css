@@ -444,6 +444,13 @@ select {
   background: #F0F3F6!important;
 }
 
+.medium-zoom--opened .medium-zoom-overlay {
+  z-index: 10000;
+}
+.medium-zoom-image--opened {
+  z-index: 10001;
+}
+
 .bg-air {
   background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);
   background-image: -o-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);

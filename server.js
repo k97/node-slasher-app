@@ -19,7 +19,7 @@ const handle = app.getRequestHandler();
 require('dotenv').config({ path: 'variables.env' });
 
 mongoose.connect(process.env.DATABASE, {
-  useMongoClient: true,
+  useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
 });
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
@@ -36,7 +36,6 @@ require('./models/Project');
 const authController = require('./controllers/authController');
 const apiRoutes = require('./router/apiRoutes');
 const { setProjectPage, onAuthorisedProject } = require('./router/projectRoutes');
-
 
 app.prepare()
 .then(() => {
@@ -91,6 +90,6 @@ app.prepare()
   const port = process.env.PORT || 3000;
   server.listen(port, (err) => {
     if (err) throw err
-    console.log(`🌍   Express running → PORT ${port}`);
+    console.log(`🌍 Express running → PORT ${port}`);
   })
 })
