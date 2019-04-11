@@ -8,3 +8,5 @@
   NODE_ENV=production forever start server.js
 
 ```
+
+** Refer to Mac Notes for Dev setup/details **

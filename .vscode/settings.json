@@ -2,12 +2,11 @@
 {
   "typescript.check.tscVersion": false,
   "window.zoomLevel": 0,
-  "workbench.colorTheme": "Material Theme Palenight",
-  "editor.fontFamily": "'Fira Code', 'Roboto Mono', Monaco, 'Courier New', monospace",
+  "workbench.colorTheme": "Dainty – Material Theme Palenight (chroma 1, lightness 2)",
+  "editor.fontFamily": "'IBM Code Plex', 'Fira Code', 'Roboto Mono', Monaco, 'Courier New', monospace",
   "editor.fontSize": 13,
   "editor.lineHeight": 24,
   "editor.fontWeight": "400",
-  "workbench.iconTheme": "material-icon-theme",
   "editor.wordWrap": "on",
   "files.exclude":{
     "**/.git": true,
@@ -15,7 +14,6 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    // "node_modules": false,
     "yarn.lock": true
   },
   "workbench.colorCustomizations": {
